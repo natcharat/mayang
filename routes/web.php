@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +15,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// PDF
+Route::any('pdf', 'ReportController@pdf');
+
+Route::any('/search', 'ReportController@search');
+
+
+
+
+
+
+
