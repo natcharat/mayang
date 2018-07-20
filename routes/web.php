@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +15,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Report
+Route::any('search', 'ReportController@search');
+Route::any('pdf/{date}', 'ReportController@pdf')->name('report.pdf');
+
+// Request
+Route::get('request', 'BoxController@index');
+Route::get('detail_leave/{id}', 'BoxController@detail')->name('request.detail');
+
+// Approve & Disapprove
+Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
+Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
+
+
+
+
+
+
