@@ -16,6 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Authentication login
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
+
+Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
+
+
 // Report
 Route::any('search', 'ReportController@search');
 Route::any('pdf/{date}', 'ReportController@pdf')->name('report.pdf');
@@ -27,6 +35,9 @@ Route::get('detail_leave/{id}', 'BoxController@detail')->name('request.detail');
 // Approve & Disapprove
 Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
 Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
+
+
+
 
 
 
