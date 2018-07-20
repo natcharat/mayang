@@ -16,11 +16,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// PDF
-Route::any('pdf', 'ReportController@pdf');
+// Report
+Route::any('search', 'ReportController@search');
+Route::any('pdf/{date}', 'ReportController@pdf')->name('report.pdf');
 
-Route::any('/search', 'ReportController@search');
+// Request
+Route::get('request', 'BoxController@index');
+Route::get('detail_leave/{id}', 'BoxController@detail')->name('request.detail');
 
+// Approve & Disapprove
+Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
+Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
 
 
 

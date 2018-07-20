@@ -9,28 +9,35 @@ use Illuminate\Support\Facades\Input;
 
 class ReportController extends Controller
 {
-    // public function index()
-    // {
-    //     $reports=Report::all();
-    //     return view('report.index', compact('reports'));
-    // }
-    // public function pdf(){
-    //     $reports = Report::all();
-    //     $pdf = PDF::loadView('report.pdf',['reports'=>$reports]);
-    //     return $pdf->stream('DailytimeReport.pdf');
-    // }
     public function search(){
-        $d = Input::get ( 'date' );
-        $user = Report::where('date','LIKE', $d)->get();
-        if(count($user) > 0)
-            return view('report.search')->withDetails($user);
-        else 
-            return view ('report.search')->withMessage('No Details found. Try to search again !');
+        $date = Input::get ( 'date' );
+        if ($date == null) {
+            $reports = Report::all();
+            $date = 0;
+        }
+        else{
+            $reports = Report::where('date','LIKE', $date)->get(); 
+            $date = str_replace('/','_',$date);  
+            // dd($date);
+        }
+
+        // dd($date);
+        return view('report.search', compact('reports', 'date'));
     }
-    public function pdf(){
-        $d = Input::get ( 'date' );
-        $reports = Report::select('Name','date','In','out')->where('date','LIKE', $d)->get();
-        $pdf = PDF::loadView('report.pdf', ['user'=>$reports]);
+    public function pdf($d){
+        // dd($d);
+        $date = Input::get ( 'date' );
+        if($d == 0){
+            $reports = Report::all();
+        }
+        else{
+            $date = str_replace('_','/',$d); 
+            // dd($date);
+            $reports = Report::where('date','LIKE', $date)->get();
+        }
+
+
+        $pdf = PDF::loadView('report.pdf', ['reports'=>$reports]);
         return $pdf->stream('DailytimeReport.pdf');
     }
 
