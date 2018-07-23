@@ -1,4 +1,44 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Prompt');
+
+html,body {
+  height:100%;
+  margin:0;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.column {
+  background-size:contain;
+}
+.column.left {
+  width:40%;
+  height:100%;
+  float:left;
+}
+.column.right {
+  width:60%;
+  height:100%;
+  float:right;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+  /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
