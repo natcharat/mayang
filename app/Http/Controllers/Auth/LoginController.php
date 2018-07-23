@@ -25,11 +25,11 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if (Auth::user()->type == 1) {
-            return '/adminhome';
+            return '/request';
         } else if (Auth::user()->type == 0) {
-            return '/home';
+            return '/timerecord';
         } else {
-            return '/home';
+            return '/';
         }
     }
 

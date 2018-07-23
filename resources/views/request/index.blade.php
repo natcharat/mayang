@@ -1,3 +1,33 @@
+@extends('layouts.admin')
+
+@section('content')
+<style>
+a:link, a:visited {
+  background-color: red;
+  color: black;
+  padding: 14px 25px;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+}
+
+
+a:hover, a:active {
+  background-color: green;
+}
+</style>
+
+@foreach($requests as $r)
+
+<a href="{{ route('request.detail', $r->id) }}">ชื่อ: {{ $r->name }}
+  <br>ตำแหน่ง: {{ $r->position }} 
+  <br>ประเภท: {{ $r->type }}
+</a>
+@endforeach
+
+@endsection
+
+
 <!-- <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +59,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -67,5 +97,5 @@
 </div>
 
 </body>
-</html>
+</html> -->
 
