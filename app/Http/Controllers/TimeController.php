@@ -15,18 +15,19 @@ class TimeController extends Controller
     }
     public function In(){ 
         $time = new Time;
-        $time->name = 'ปรียานุช มูลถี';
+        $time->name = Auth::user()->name;
         $time->time_in = date('h:i:sa');
         $time->time_off = date('23:59:00');
         $time->date = date('d-m-Y');
-        // dd($time);
         $time->save();
 
         return redirect('timerecord');
     }
     public function off(){
-        $off = Time::where('date',date('d-m-Y'))->update(['time_off' => date('h:i:sa')]);;
-        // dd($off);
+        $name = Auth::user()->name;
+        $off = Time::where('date', date('d-m-Y'))
+                ->where('name', Auth::user()->name)
+                ->update(['time_off' => date('h:i:sa')]);
         return redirect('timerecord');
     }
 }
