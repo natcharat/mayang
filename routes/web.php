@@ -38,6 +38,14 @@ Route::get('timerecord', 'TimeController@Index');
 Route::get('time_in', 'TimeController@in');
 Route::get('time_off', 'TimeController@off');
 
+Route::get('add','LeaveController@create');
+Route::post('add','LeaveController@store');
+Route::get('request','BoxController@index');
+
+Route::delete('{id}','LeaveController@destroy');
+
+Route::get('Notice','NoticeController@index');
+
 
 
 
