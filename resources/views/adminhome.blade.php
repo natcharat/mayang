@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in ad Admin!
+                    You are logged in as Admin!
+                    
                 </div>
             </div>
         </div>
