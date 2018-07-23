@@ -20,13 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
-
 Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
 
 
 // Report
-Route::any('search', 'ReportController@search');
-Route::any('pdf/{date}', 'ReportController@pdf')->name('report.pdf');
+Route::get('report', 'ReportController@report');
 
 // Request
 Route::get('request', 'BoxController@index');
@@ -35,6 +33,12 @@ Route::get('detail_leave/{id}', 'BoxController@detail')->name('request.detail');
 // Approve & Disapprove
 Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
 Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
+
+//timerecord
+Route::get('timerecord', 'TimeController@Index');
+Route::get('time_in', 'TimeController@in');
+Route::get('time_off', 'TimeController@off');
+
 
 
 
