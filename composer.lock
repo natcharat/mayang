@@ -700,16 +700,16 @@
         },
         {
             "name": "jimmyjs/laravel-report-generator",
-            "version": "1.0.18",
+            "version": "1.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jimmy-JS/laravel-report-generator.git",
-                "reference": "3be9545f2eb1659f2f4a77b8882fd6de115fc2e4"
+                "reference": "e132402c88851a912d18f9e0a9ff4e3a3d1fb527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jimmy-JS/laravel-report-generator/zipball/3be9545f2eb1659f2f4a77b8882fd6de115fc2e4",
-                "reference": "3be9545f2eb1659f2f4a77b8882fd6de115fc2e4",
+                "url": "https://api.github.com/repos/Jimmy-JS/laravel-report-generator/zipball/e132402c88851a912d18f9e0a9ff4e3a3d1fb527",
+                "reference": "e132402c88851a912d18f9e0a9ff4e3a3d1fb527",
                 "shasum": ""
             },
             "require": {
@@ -749,7 +749,7 @@
                 "pdf report",
                 "report"
             ],
-            "time": "2018-06-12T02:50:56+00:00"
+            "time": "2018-07-23T04:18:07+00:00"
         },
         {
             "name": "laravel/framework",
