@@ -15,14 +15,26 @@ a:link, a:visited {
 a:hover, a:active {
   background-color: green;
 }
+
 </style>
 
 @foreach($requests as $r)
-
-<a href="{{ route('request.detail', $r->id) }}">ชื่อ: {{ $r->name }}
-  <br>ตำแหน่ง: {{ $r->position }} 
-  <br>ประเภท: {{ $r->type }}
-</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card" style="background-color: white">
+                <a href="{{ route('request.detail', $r->id) }}">
+                    <div class="card-body">
+                        <font>ชื่อ: {{ $r->name }}</font>
+                        <font>ตำแหน่ง: {{ $r->position }}</font>
+                        <font>ประเภท: {{ $r->type }}</font>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
 @endforeach
 
 @endsection

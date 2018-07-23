@@ -60,18 +60,17 @@ div.card {
 <body>
     <div id="app">
         <main class="py-4">
-
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10 col-sm-4">
                         <div class="card">
                             <div class="card-body">
                                 <br>
-                                    <center>
-                                        <font class="mayang_brand">
-                                            Ma-Yang
-                                        </font>
-                                    </center>
+                                <center>
+                                    <font class="mayang_brand">
+                                        Ma-Yang
+                                    </font>
+                                </center>
 
                                 <br><br><br><br>
 
