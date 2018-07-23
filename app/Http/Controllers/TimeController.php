@@ -9,6 +9,11 @@ use Auth;
 
 class TimeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('user');
+    }
+
     public function index(){
 
         return view('timerecord');

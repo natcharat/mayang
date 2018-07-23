@@ -18,8 +18,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
-Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
+// Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
+// Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
 
 
 // Report

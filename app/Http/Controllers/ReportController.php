@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Input;
 
 class ReportController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('admin');
+    }
 
     public function report(){
         $data = Report::all();
