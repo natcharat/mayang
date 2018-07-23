@@ -34,6 +34,29 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @auth
+                            <li class="nav-item">
+                                <a href="#">การเข้างาน</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">คำขอ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#">เพิ่มผู้ใช้</a>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                            </li>
+                        @else
+
+                        @endauth
 
                     </ul>
 
@@ -43,6 +66,9 @@
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">

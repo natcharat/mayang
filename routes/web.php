@@ -11,12 +11,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Authentication login
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-//Authentication login
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
