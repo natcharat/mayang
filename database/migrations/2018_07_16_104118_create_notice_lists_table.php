@@ -22,7 +22,10 @@ class CreateNoticeListsTable extends Migration
 
             $table->integer('notice_id')->unsigned();
             $table->foreign('notice_id')->references('id')->on('notices')->onDelete('cascade');
-        
+
+            $table->timestamps();
+            
+            
         });
     }
 
