@@ -37,6 +37,24 @@ a {
     color: white;
 }
 
+div.clock {
+    color: #3C4254;
+    font-size: 100px;
+}
+
+.timeBtn {
+    background-color: #3C4254;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 </style>
 
 <body>

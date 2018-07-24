@@ -18,10 +18,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
-// Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
-
-
 // Report
 Route::get('report', 'ReportController@report');
 
@@ -35,8 +31,7 @@ Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disappr
 
 //timerecord
 
-Route::get('/timerecord_in', 'TimeController@in_index');  
-Route::get('/timerecord_off', 'TimeController@off_index');
+Route::get('/timerecord', 'TimeController@index');  
 Route::get('/time_in', 'TimeController@in');
 Route::get('/time_off', 'TimeController@off');
 

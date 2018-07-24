@@ -25,17 +25,11 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        $time = Time::where('date', date('d-m-Y'))
-                    ->where('name', Auth::user()->name);
-
         if (Auth::user()->type == 1) {
             return '/request';
         } else if (Auth::user()->type == 0) {
-            if ($time == null) {  
-                return '/timerecord_in';
-            } else {
-                return '/timerecord_off';
-            }
+            return '/timerecord';
+
         } else {
             return '/';
         }

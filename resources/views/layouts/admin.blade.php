@@ -61,7 +61,7 @@
                         @auth
                         
                         <li class="nav-item {{ Request::segment(1) === '/report' ? 'active' : null }}">
-                            <a href="#" style="color: white; position: relative;">การเข้างาน</a>
+                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
                         
 
@@ -69,10 +69,12 @@
                             <a href="/request" style="color: white; position: relative;">คำขอ</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/user/create' ? 'active' : null }}">
-                            <a href="#" style="color: white">เพิ่มผู้ใช้</a>
+                            <a href="/user/create" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
 
                         @endauth
+                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
