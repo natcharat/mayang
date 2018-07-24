@@ -46,6 +46,7 @@ Route::get('/notice/edit/{id}','NoticeController@edit')->name('notice.edit');
 Route::get('/notice/show/{id}','NoticeController@show')->name('notice.show');
 Route::get('/notice/delete/{id}','NoticeController@delete')->name('notice.delete');
 Route::patch('notice/update/{id}','NoticeController@update')->name('notice.update');
+Route::get('/notice/show_user/{id}','NoticeController@show_user')->name('notice.show_user');
 
 //create user
 Route::get('/user','UserController@index')->name('user.crud');
@@ -55,6 +56,14 @@ Route::get('/user/edit/{id}','UserController@edit')->name('user.edit');
 Route::get('/user/show/{id}','UserController@show')->name('user.show');
 Route::get('/user/delete/{id}','UserController@delete')->name('user.delete');
 Route::patch('user/update/{id}','UserController@update')->name('user.update');
+
+Route::get('add','LeaveController@create');
+Route::post('add','LeaveController@store');
+Route::get('leave','BoxController@index');
+Route::delete('{id}','LeaveController@destroy');
+Route::get('Notice_show','NoticeController@show_notice');
+
+Route::get('Notice','NoticeController@index');
 
 
 

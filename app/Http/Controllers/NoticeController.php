@@ -104,4 +104,18 @@ public function update($id, Request $request){
 
     return redirect()->route('notice.crud');
 }
+public function show_notice(){
+    $notices = Notice::all();
+    foreach ($notices as $key => $notice) {
+
+    }
+    if(empty($notices))
+        abort(404);
+    return view('notice.notice' , compact('notices'));
+}
+
+public function show_user($id){
+        $notice = Notice::find($id);
+        return view('notice.show_user', compact('notice'));
+    }
 }
