@@ -42,11 +42,17 @@
 
 <!-- bUTTON -->
 <br><br>
-<a href="{{ url('time_in') }}">
-  <button class="click" id="in_btn" onclick="press_in()">
-   TIME IN
-</button>
-</a>    
+       
+        @if ($time == null)
+            <button class="btn btn-success">in</button>
+
+        @elseif ($time->status == 'in')
+            <button class="btn btn-success">off</button>
+        @elseif ($time->staus == 'off')
+                
+        @endif
+
+    
 
 </div>
 </body>

@@ -73,6 +73,8 @@
                         </li>
 
                         @endauth
+                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
