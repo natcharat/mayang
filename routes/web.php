@@ -34,9 +34,11 @@ Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
 Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
 
 //timerecord
-Route::get('timerecord', 'TimeController@Index');
-Route::get('time_in', 'TimeController@in');
-Route::get('time_off', 'TimeController@off');
+
+Route::get('/timerecord_in', 'TimeController@in_index');  
+Route::get('/timerecord_off', 'TimeController@off_index');
+Route::get('/time_in', 'TimeController@in');
+Route::get('/time_off', 'TimeController@off');
 
 //create notice
 Route::get('/notice','NoticeController@index')->name('notice.crud');

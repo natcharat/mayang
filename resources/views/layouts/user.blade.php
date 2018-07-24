@@ -55,7 +55,7 @@ a {
                     <ul class="navbar-nav mr-auto">
                         @auth
                         <li class="nav-item">
-                            <a href="#">บันทึกเวลา</a>
+                            <a href="/timerecord_in">บันทึกเวลา</a>
                         </li>
                         <li class="nav-item">
                             <a href="#">ส่งคำขอ</a>

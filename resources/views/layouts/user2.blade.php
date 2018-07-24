@@ -13,37 +13,32 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
 
-    <style>
-    html, body {
-        background-color: white;
-        color: #3C4254;
-    }
+<style>
+html, body {
+    background-color: white;
+    color: #3C4254;
+}
 
-    li {
-        margin: 2px 6px;
-        text-align: center;
-        text-decoration: none;
-    }
+li {
+    margin: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+}
 
-    div.card {
-        box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-        padding: 5px;
-    }
+a {
+    color: white;
+}
 
 </style>
 
-</head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
@@ -59,20 +54,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                        
-                        <li class="nav-item {{ Request::segment(1) === '/report' ? 'active' : null }}">
-                            <a href="#" style="color: white; position: relative;">การเข้างาน</a>
+                        <li class="nav-item">
+                            <a href="/timerecord_off">บันทึกเวลา</a>
                         </li>
-                        
-
-                        <li class="nav-item {{ Request::segment(1) === '/request' ? 'active' : null }}">
-                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
+                        <li class="nav-item">
+                            <a href="#">ส่งคำขอ</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/user/create' ? 'active' : null }}">
-                            <a href="#" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-item">
+                            <a href="#">ประกาศบริษัท</a>
                         </li>
+                        @else
 
                         @endauth
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -82,6 +76,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
+
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: white">

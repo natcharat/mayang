@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use App\Time;
 
 class LoginController extends Controller
 {
@@ -24,10 +25,20 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
+        $time = Time::where('date', date('d-m-Y'))
+                    ->where('name', Auth::user()->name);
+
+        
         if (Auth::user()->type == 1) {
             return '/request';
         } else if (Auth::user()->type == 0) {
-            return '/timerecord';
+
+            if ($time == null) {
+                dd('poon');
+                return '/timerecord_off';
+            } else {
+                return '/timerecord_in';
+            }
         } else {
             return '/';
         }
