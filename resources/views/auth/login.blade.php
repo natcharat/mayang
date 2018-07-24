@@ -46,7 +46,7 @@ div.card {
     background-color: white;
     opacity: 1;
     padding: 10px;
-    height: 72vh;
+    height: 80vh;
 }
 
 .mayang_brand {
@@ -62,7 +62,7 @@ div.card {
         <main class="py-4">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-10 col-sm-4">
+                    <div class="col-md-8 col-sm-4">
                         <div class="card">
                             <div class="card-body">
                                 <br>
@@ -72,7 +72,7 @@ div.card {
                                     </font>
                                 </center>
 
-                                <br><br><br><br>
+                                <br><br><br>
 
                                 <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                                     @csrf
