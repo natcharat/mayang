@@ -20,6 +20,7 @@
   <link href="https://fonts.googleapis.com/css?family=Pattaya|Trirong" rel="stylesheet">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
@@ -111,12 +112,11 @@
     color: #fff;
   }
   .font1{
-    font-family: 'Sriracha', cursive;
+    font-family: 'Kanit', sans-serif
+    font-size: 15px;
 
   }
-  .font2{
-    font-family: 'Pattaya', sans-serif;
-  }
+  
 </style> 
 </head>
 
@@ -132,9 +132,9 @@
 
         <div class="row" style="background-color:#FFA500">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4" style="font-family:'Pattaya'" >
+          <div class="form-group col-md-4" style="font-family:'Kanit'" >
             <center>
-              <font1 color=""><h2>กรอกแบบคำขอลางาน</h2></font1><br>
+              <font size="6"><h1>กรอกแบบคำขอลางาน</h1></font><br>
             </center>
           </div>
         </div>
