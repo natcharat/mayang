@@ -28,16 +28,13 @@ class LoginController extends Controller
         $time = Time::where('date', date('d-m-Y'))
                     ->where('name', Auth::user()->name);
 
-        
         if (Auth::user()->type == 1) {
             return '/request';
         } else if (Auth::user()->type == 0) {
-
-            if ($time == null) {
-                dd('poon');
-                return '/timerecord_off';
-            } else {
+            if ($time == null) {  
                 return '/timerecord_in';
+            } else {
+                return '/timerecord_off';
             }
         } else {
             return '/';
