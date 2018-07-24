@@ -23,7 +23,9 @@
 
 <style>
 html, body {
-    background-color: white;
+    background-color: #EFD1C6;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 button {
@@ -38,26 +40,39 @@ button {
 .fc {
     color: #3C4254;
 }
+
+div.card {
+    box-shadow: 0 5px 8px grey;
+    background-color: white;
+    opacity: 1;
+    padding: 10px;
+    height: 72vh;
+}
+
+.mayang_brand {
+    /*padding: 20px 50px 50px 50px;*/
+    color: #EF6924;
+    font-size: 110px;
+
+}
 </style>
 
 <body>
     <div id="app">
         <main class="py-4">
-
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col-md-10 col-sm-4">
                         <div class="card">
-
                             <div class="card-body">
-                                
-                                    <center>
-                                        <font style="color: #EF6924; font-size: 100px" >
-                                            Ma-Yang
-                                        </font>
-                                    </center>
-
                                 <br>
+                                <center>
+                                    <font class="mayang_brand">
+                                        Ma-Yang
+                                    </font>
+                                </center>
+
+                                <br><br><br><br>
 
                                 <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                                     @csrf
@@ -104,7 +119,7 @@ button {
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-8 offset-md-4">
-                                            <button type="submit">
+                                            <button style="background-color: #EF6924" type="submit">
                                                 {{ __('Login') }}
                                             </button>
 
