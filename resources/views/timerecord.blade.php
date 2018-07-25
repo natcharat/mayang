@@ -2,11 +2,6 @@
 
 @section('content')
 
-<style>
-
-}
-</style>
-
 <body>
 	<br><br><br>
 	<div class="container">

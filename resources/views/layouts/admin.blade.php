@@ -24,27 +24,52 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-    <style>
-    html, body {
-        background-color: white;
-        color: #3C4254;
-    }
+</head>
 
-    li {
-        margin: 2px 6px;
-        text-align: center;
-        text-decoration: none;
-    }
+<style>
+html {
+    background-color: white;
+    color: #3C4254;
+}
 
-    div.card {
-        box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-        padding: 5px;
-    }
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: white;
+    color: #3C4254;
+}
+
+li {
+    margin: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.card {
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px;
+}
+
+.btn_crud {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 7px 10px;
+}
+
+.btn_crud1 {background-color: #0089E5;}
+.btn_crud2 {background-color: #FECE00;}
+.btn_crud3 {background-color: #F44336;}
 
 </style>
 
-</head>
-<body style="font-family: 'Kanit', sans-serif;">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
@@ -70,10 +95,10 @@
 
                         </li>  
                         <li class="nav-item {{ Request::segment(1) === '/create-user' ? 'active' : null }}">
-                            <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                            <a href="/user" style="color: white">ข้อมูลผู้ใช้</a>
                         </li>
                         <li class="nav-item {{ Request::segment(1) === '/create-notice' ? 'active' : null }}">
-                            <a href="/notice" style="color: white">เพิ่มประกาศ</a>
+                            <a href="/notice" style="color: white">ประกาศบริษัท</a>
 
                         </li>
 
