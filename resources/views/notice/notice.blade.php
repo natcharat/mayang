@@ -47,7 +47,7 @@
       
     </div>
 
-    @foreach($notices as $notice)
+    @foreach($some_notice as $notice)
 
     <div class="panel panel-default">
       <div class="panel-heading">
