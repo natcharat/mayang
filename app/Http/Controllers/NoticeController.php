@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Notice;
 use App\Notice_list;
 use App\User;
+use Illuminate\Support\Facades\Auth; 
 use Session;
 use App\Http\Requests\NoticeRequest;
 use Illuminate\Http\Request;
@@ -55,6 +56,8 @@ class NoticeController extends Controller
         foreach ($notice_lists as $key => $notice_list) {
             $keep_user[$key] = $notice_list->user_id;
         }
+        dd($keep_user);
+
         return view('notice.edit', compact('notice','user_lists','keep_user'));
     }
 
@@ -105,18 +108,29 @@ public function update($id, Request $request){
 
     return redirect()->route('notice.crud');
 }
+// -------------all notice-------------
 public function show_notice(){
-    $notices = Notice::all();
-    foreach ($notices as $key => $notice) {
+    $id_user = Auth::user()->id;
+    $id_notices = Notice_list::select('notice_id')
+    ->where('user_id',$id_user)
+    ->get();
 
+    foreach ($id_notices as $key => $id_notice) {
+            $keep_id[$key] = $id_notice->notice_id;
     }
-    if(empty($notices))
-        abort(404);
-    return view('notice.notice' , compact('notices'));
+    
+    foreach ($keep_id as $key => $keep_id) {
+        $some_notice[$key] = Notice::where('id',$keep_id)
+        ->first();
+    } 
+    
+    
+    
+    return view('notice.notice' , compact('some_notice'));
 }
-
+// -------------one notice-------------
 public function show_user($id){
-        $notice = Notice::find($id);
-        return view('notice.show_user', compact('notice'));
-    }
+    $notice = Notice::find($id);
+    return view('notice.show_user', compact('notice'));
+}
 }

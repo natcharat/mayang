@@ -31,7 +31,6 @@
                     extend: 'pdfHtml5',
                     orientation: 'portrait',
                     pageSize: 'A4'
-
                 }
                 ]
             } );
