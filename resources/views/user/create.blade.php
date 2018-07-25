@@ -4,15 +4,27 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
     <br><br>
     <div class="container">
 
         <h1>Create User</h1>
-
+        @if($errors->any())
+        <ul class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <center>
+                <font size="3">
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                    -{{ $error }}-
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                </font>
+            </center>
+            @endforeach
+        </ul>
+        @endif
         <br>
         <div class="column left">
-                <img src="{{asset('img/user01.png')}}" class="img-responsive" >
+            <img src="{{asset('img/user01.png')}}" class="img-responsive" >
         </div>
 
 

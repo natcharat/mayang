@@ -1,10 +1,7 @@
-<!doctype html>
-<head>
-    <title>Notice Details</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
+@extends('layouts.admin')
+@section('content')
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
     <br><br>
     <div class="container">
 
@@ -22,4 +19,4 @@
 
     </div>
 </body>
-</html>
+@endsection

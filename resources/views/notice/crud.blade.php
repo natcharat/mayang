@@ -1,10 +1,7 @@
-<!doctype html>
-<head>
-    <title>Manage Notices</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
+@extends('layouts.admin')
+@section('content')
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
 
     @if (session('msg'))
     <div class="alert alert-success">
@@ -20,7 +17,7 @@
     <footer class="col-md-12 text-right">
         <a href="{{ route('notice.create') }}" class="btn btn-success">Add Content</a>
     </footer> <br>
-    
+    <font size="3">
     <table class="table table-striped">
         <thead class="thead-dark">
             <h4><tr>
@@ -43,6 +40,7 @@
             @endforeach
         </tbody>
     </table>
+</font>
 </div>
 </body>
-</html>
+@endsection

@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 @import url('https://fonts.googleapis.com/css?family=Prompt');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
 
 html,body {
   height:100%;
@@ -7,7 +8,6 @@ html,body {
 }
 
 body {
-  font-family: 'Prompt', sans-serif;
   font-size: 15px;
   line-height: 1.6;
 }

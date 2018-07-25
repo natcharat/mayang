@@ -6,6 +6,7 @@ use App\Notice;
 use App\Notice_list;
 use App\User;
 use Session;
+use App\Http\Requests\NoticeRequest;
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -26,7 +27,7 @@ class NoticeController extends Controller
         return view('notice.create',compact('user_lists'));
     }
 
-    public function store(Request $request){
+    public function store(NoticeRequest $request){
         $notice = new Notice($request->all());
         $notice->save();
 
