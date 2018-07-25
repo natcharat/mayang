@@ -1,13 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 @import url('https://fonts.googleapis.com/css?family=Prompt');
 @import url('https://fonts.googleapis.com/css?family=Kanit');
-html,body {
+
+
+
+
+html {
   height:100%;
   margin:0;
 }
 
 body {
-  
+  height:100%;
+  margin:0;
   font-size: 15px;
   line-height: 1.6;
 }

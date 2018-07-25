@@ -5,20 +5,34 @@
     <link rel="stylesheet" href="{{asset('js/app.js')}}">
 </head>
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
 
     <br><br>
     <div class="container">
 
         <h1>Create Notice</h1>
 
+        @if($errors->any())
+        <ul class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <center>
+                <font size="3">
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                    -{{ $error }}-
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                </font>
+            </center>
+            @endforeach
+        </ul>
+        @endif
+        
         <div class="row"> 
             <footer class="col-md-12 text-right">
                 <a href="{{ route('notice.crud') }}" class="btn btn-xs btn-danger"> back </a>
             </footer>
         </div>
         <br>
-
+        
         <div class="section-form">
             {!! Form::open(['route' => 'notice.store', 'method' => 'post', 'files' => true]) !!}
 

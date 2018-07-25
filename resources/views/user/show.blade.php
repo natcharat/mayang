@@ -1,11 +1,8 @@
-<!doctype html>
-<head>
-    <title>Creat User</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
+@extends('layouts.admin')
+@section('content')
 
-<body>
-    <br><br>
+<body style="font-family: 'Kanit', sans-serif;">
+    <br>
     <div class="container">
 
         <h1>User Details</h1>
@@ -15,7 +12,7 @@
             <img class="img-responsive" src="{{asset('img/user01.png')}}" width="382" height="382">
         </div>
 
-
+        <font size="3">
         <div class="column right">
             <h3>ข้อมูลของ {{$user->username}}</h3>
             <hr>
@@ -42,8 +39,8 @@
                 <a href="{{ route('user.crud') }}" class="btn btn-xs btn-danger"> back </a>
             </footer>
         </div>
+    </font>
     </div>
 </div>
 </body>
-
-</html>
+@endsection

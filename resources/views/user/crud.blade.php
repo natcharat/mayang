@@ -1,10 +1,7 @@
-<!doctype html>
-<head>
-    <title>Manage Users</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
+@extends('layouts.admin')
+@section('content')
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
 
     @if (session('msg'))
     <div class="alert alert-success">
@@ -13,7 +10,7 @@
   @endif
 
   <div class="container">
-    <br><br>
+    <br>
     <h3>Users</h3>
     <br>
     
@@ -50,4 +47,4 @@
  </table>
 </div>
 </body>
-</html>
+@endsection

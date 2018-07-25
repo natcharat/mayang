@@ -44,7 +44,7 @@
 </style>
 
 </head>
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
@@ -67,9 +67,14 @@
 
                         <li class="nav-item {{ Request::segment(1) === '/request' ? 'active' : null }}">
                             <a href="/request" style="color: white; position: relative;">คำขอ</a>
+
+                        </li>  
+                        <li class="nav-item {{ Request::segment(1) === '/create-user' ? 'active' : null }}">
+                            <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/user/create' ? 'active' : null }}">
-                            <a href="/user/create" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-item {{ Request::segment(1) === '/create-notice' ? 'active' : null }}">
+                            <a href="/notice" style="color: white">เพิ่มประกาศ</a>
+
                         </li>
 
                         @endauth
