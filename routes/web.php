@@ -18,10 +18,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home')->middleware('user');
-// Route::get('/adminhome', 'AdminsController@index')->middleware('admin');
-
-
 // Report
 Route::get('report', 'ReportController@report');
 
@@ -34,9 +30,10 @@ Route::get('approve/{id}', 'BoxController@approve')->name('request.approve');
 Route::get('disapprove/{id}', 'BoxController@disapprove')->name('request.disapprove');
 
 //timerecord
-Route::get('timerecord', 'TimeController@Index');
-Route::get('time_in', 'TimeController@in');
-Route::get('time_off', 'TimeController@off');
+
+Route::get('/timerecord', 'TimeController@index');  
+Route::get('/time_in', 'TimeController@in');
+Route::get('/time_off', 'TimeController@off');
 
 //create notice
 Route::get('/notice','NoticeController@index')->name('notice.crud');

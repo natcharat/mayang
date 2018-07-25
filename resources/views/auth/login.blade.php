@@ -23,9 +23,11 @@
 
 <style>
 html, body {
-    background-color: #EFD1C6;
+    background: url('img/morganblake7.jpg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100% 100%;
 }
 
 button {
@@ -42,8 +44,9 @@ button {
 }
 
 div.card {
-    box-shadow: 0 5px 8px grey;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     background-color: white;
+    border-radius: 0px;
     opacity: 1;
     padding: 10px;
     height: 80vh;

@@ -13,10 +13,11 @@ class TimeController extends Controller
     {
         $this->middleware('user');
     }
-
     public function index(){
-
-        return view('timerecord');
+        
+        $time = Time::where('name', Auth::user()->name)
+        ->where('date',date('d-m-Y'))->first();
+        return view('timerecord', compact('time'));
     }
     public function In(){ 
         $time = new Time;
@@ -24,6 +25,7 @@ class TimeController extends Controller
         $time->time_in = date('h:i:sa');
         $time->time_off = date('23:59:00');
         $time->date = date('d-m-Y');
+        $time->status = 'in';
         $time->save();
 
         return redirect('timerecord');
@@ -31,8 +33,10 @@ class TimeController extends Controller
     public function off(){
         $name = Auth::user()->name;
         $off = Time::where('date', date('d-m-Y'))
-                ->where('name', Auth::user()->name)
-                ->update(['time_off' => date('h:i:sa')]);
+        ->where('name', Auth::user()->name)
+        ->update(['time_off' => date('h:i:sa'), 'status' => 'off']);
+
+        
         return redirect('timerecord');
     }
 }

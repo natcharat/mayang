@@ -60,19 +60,21 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                         
-                        <li class="nav-item {{ Request::segment(1) === '/timerecord' ? 'active' : null }}">
-                            <a href="#" style="color: white; position: relative;">การเข้างาน</a>
+                        <li class="nav-item {{ Request::segment(1) === '/report' ? 'active' : null }}">
+                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
                         
 
                         <li class="nav-item {{ Request::segment(1) === '/request' ? 'active' : null }}">
                             <a href="/request" style="color: white; position: relative;">คำขอ</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/create-user' ? 'active' : null }}">
-                            <a href="#" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-item {{ Request::segment(1) === '/user/create' ? 'active' : null }}">
+                            <a href="/user/create" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
 
                         @endauth
+                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
