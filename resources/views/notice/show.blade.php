@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-<body style="font-family: 'Kanit', sans-serif;">
+<body>
     <br><br>
     <div class="container">
 
