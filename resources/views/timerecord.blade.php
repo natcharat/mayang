@@ -22,8 +22,6 @@
             	   return i;
                 }
             </script>
-
-
             <body onload="startTime()">
                 <div class="containner">
                     <div class="row justify-content-center">
@@ -58,19 +56,35 @@
         <!-- bUTTON -->
         <br><br>
 
+
         @if ($time == null)
         <a href="{{ url('time_in') }}">
-            <button class="timeBtn">เข้างาน</button>
+            <button class="timeBtn" id="time" disabled>เข้างาน</button>
         </a>
 
         @elseif ($time->status == 'in')
         <a href="{{ url('time_off') }}">
-            <button class="timeBtn">ออกงาน</button>
+            <button class="timeBtn" id="time" disabled>ออกงาน</button>
         </a>
-        @elseif ($time->staus == 'off')
 
         @endif
 
     </div>
+    <script type="text/javascript">
+        var IP = {!! json_encode($ip) !!}
+
+          $.ajax({
+            type: 'GET',
+            url: 'https://json.geoiplookup.io',
+            success: function (res) {
+                console.log(res.ip);
+                $("#ip").text(res.ip);
+                if (IP == res.ip) {
+                    $('#time').attr('disabled', false);
+                }
+            }
+        })
+    </script>
+
 </body>
 @endsection
