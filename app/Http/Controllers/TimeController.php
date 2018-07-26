@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Time;
 use Auth;
+use App\Ip;
 
 
 class TimeController extends Controller
@@ -17,7 +18,10 @@ class TimeController extends Controller
         
         $time = Time::where('name', Auth::user()->name)
         ->where('date',date('d-m-Y'))->first();
-        return view('timerecord', compact('time'));
+        $ip = Ip::orderBy('updated_at', 'desc')->first();
+        $ip = decrypt($ip->ip);
+        // dd($ip);    
+        return view('timerecord', compact('time', 'ip'));
     }
     public function In(){ 
         $time = new Time;
