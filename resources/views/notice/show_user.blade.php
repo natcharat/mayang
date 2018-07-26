@@ -1,4 +1,6 @@
-<!doctype html>
+@extends('layouts.user')
+
+@section('content')
 <head>
     <title>Notice Details</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -6,7 +8,7 @@
 
 <body>
     <br><br>
-    <div class="container">
+    <div class="container font">
 
         <h1>{{$notice->topic}}</h1>
         <hr>
@@ -14,12 +16,14 @@
             <font size="2">updated : {{ $notice->updated_at->diffForHumans() }}</font>
         </footer><br>
 
-        <font size="3"> {!! nl2br(e($notice->body)) !!} </font>
+        <font size="4"> {!! nl2br(e($notice->body)) !!} </font>
         <br><br>
         <footer class="col-md-12 text-right">
-            <INPUT class="w3-button w3-orange" TYPE="button" VALUE="กลับ" onClick="history.back()">
+            
+
+            <button class="btn btn-md btn-danger"onClick="history.back()">ย้อนกลับ</button>
         </footer>
 
     </div>
 </body>
-</html>
+@endsection
