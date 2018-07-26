@@ -108,6 +108,7 @@ public function update($id, Request $request){
 
     return redirect()->route('notice.crud');
 }
+
 // -------------all notice-------------
 public function show_notice(){
     $id_user = Auth::user()->id;

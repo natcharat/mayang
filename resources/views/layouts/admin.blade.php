@@ -131,6 +131,10 @@ tr, td {
                             <a class="navlink" href="/notice">ประกาศบริษัท</a>
                         </li>
 
+                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
+                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
+                        </li> 
+
                         @endauth
                     </ul>
 
