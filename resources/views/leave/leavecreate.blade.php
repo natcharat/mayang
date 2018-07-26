@@ -113,7 +113,7 @@
   }
   .font1{
     font-family: 'Kanit', sans-serif
-    font-size: 15px;
+    font-size: ;
 
   }
   
@@ -121,7 +121,7 @@
 </head>
 
 
-<body>
+<body class="font1">
 
   <div class="container" style="background-color:">
     <div class="form-style-2">
@@ -130,18 +130,18 @@
 
       <div class="container" style="background-color:">    
 
-        <div class="row" style="background-color:#FFA500">
+        <div class="row" style="background-color:#EF6924">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="font-family:'Kanit'" >
             <center>
-              <font size="6"><h1>กรอกแบบคำขอลางาน</h1></font><br>
+              <font size="8" color="white"><br>แบบคำขอลางาน<br></font><br>
             </center>
           </div>
         </div>
         <br><br>
         
 
-        <div style="font-family:'Sriracha'" >
+        <div style="font-family:'Kanit'" >
           @if($errors->any())
           <ul class="alert alert-danger">
             @foreach($errors->all() as $error)
@@ -161,10 +161,10 @@
         <form method="post" action="{{url('add')}}" enctype="multipart/form-data">
           @csrf
 
-          <div class="row" style="font-family:'Sriracha'">
+          <div class="row" style="font-family:'Kanit'">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <label for="sel1"><font color="" size="3">ประเภทการลา:</font></label>
+              <label for="sel1"><font color="" size="4">ประเภทการลา:</font></label>
               <select class="form-control" id="sel1" size="1" name="type">
                 <option value="ลาป่วย">ลาป่วย</option>
                 <option value="ลากิจ">ลากิจ</option>
@@ -174,17 +174,17 @@
             </div>
           </div>
 
-          <div class="row"  style="font-family:'Sriracha'">
+          <div class="row"  style="font-family:'Kanit'">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <font color="" size="3"><label for="name">ชื่อ:</label></font>
+              <font color="" size="4"><label for="name">ชื่อ:</label></font>
               <input type="text" class="form-control" name="name">
             </div>
           </div>
-          <div class="row" style="font-family:'Sriracha'">
+          <div class="row" style="font-family:'Kanit'">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <label for="sel1"><font color="" size="3">ตำแหน่ง:</font></label>
+              <label for="sel1"><font color="" size="4">ตำแหน่ง:</font></label>
               <select class="form-control" id="sel1" size="1" name="position">
                 <option value="Developer">Developer</option>
                 <option value="Creative">Creative</option>
@@ -194,7 +194,7 @@
             </div>
           </div>
 
-          <div class="row" style="font-family:'Sriracha'">
+          <div class="row" style="font-family:'Kanit'">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <p><font color="green" size="4">start: </font><input name="start" class="form-control" type="text" id="datepicker">
@@ -203,7 +203,7 @@
               </div>
             </div>    
 
-            <div class="row" style="font-family:'Sriracha'">
+            <div class="row" style="font-family:'Kanit'">
               <div class="col-md-4"></div>
               <div class="form-group col-md-4">
                 <font color="" size="4"><label for="detail">detail:</label></font>
@@ -211,7 +211,7 @@
               </div>
             </div> 
 
-            <div class="row" style="font-family:'Sriracha'">
+            <div class="row" style="font-family:'Kanit'">
               <div class="col-md-4"></div>
               <div class="form-group col-md-4">
                 <font color="" size="4"><label for="img">แนบไฟล์รูปภาพ:</label></font>
@@ -225,10 +225,14 @@
               <div class="col-md-4"></div>
               <div class="form-group col-md-4">
                 <button type="submit" class="w3-button w3-indigo">
-                  <font size="4">ส่งแบบคำขอลางาน</button>
-                  </form>
+                  <font size="4" class="font1" color="white">ส่งแบบคำขอลางาน</button>
 
-                  <INPUT class="w3-button w3-orange" TYPE="button" VALUE="ยกเลิกคำขอลางาน" onClick="history.back()">
+                  </form>
+                  
+                  <button type="submit" class="w3-button w3-orange" onClick="history.back()">
+                  กลับ</button>
+
+                  
                 </font>
 
               </div>

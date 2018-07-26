@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'MA-YANG') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 </head>
 
 <style>
@@ -57,6 +58,41 @@ div.clock {
     margin: 4px 2px;
     cursor: pointer;
 }
+.fontuser{
+    font-family: 'Kanit', sans-serif;
+}
+#text_right { text-align:right; }
+word-wrap:break-word;
+div#mylayout_2{
+    display:block;
+    width:100px;
+    border:1px solid #09C;
+    background-color:#CFC;
+    word-wrap:break-word;
+
+}
+.p {
+ font-size:1.2em;
+ line-height:3em;
+ height:5em;
+ border:3px solid #8A8E98;
+ overflow: hidden;   
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+}
+.font{
+  font-family: 'Kanit', sans-serif;
+  color:  ;
+}
+.divcurcle {
+  border-radius: 25px;
+  border: 2px solid #8A8E98;
+  padding: 200px; 
+  width: 200px;
+  height: 150px;
+}
 </style>
 
 <body>
@@ -64,7 +100,7 @@ div.clock {
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
-                    {{ config('app.name', 'Laravel') }}
+                    Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -121,9 +157,10 @@ div.clock {
         </div>
     </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
+    
 </div>
+<main class="py-4">
+    @yield('content')
+</main>
 </body>
 </html>

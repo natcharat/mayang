@@ -58,9 +58,6 @@ div.card {
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
     padding: 5px;
 }
-tr:hover {
-    background-color: #f5f5f5;
-}
 tr:nth-child(even) {
     background-color: #D8D9DD
 }
@@ -131,8 +128,8 @@ tr, td {
                             <a class="navlink" href="/notice">ประกาศบริษัท</a>
                         </li>
 
-                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
-                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
+                        <li class="nav-item">
+                            <a class="navlink" href="/ip/manage">จัดการ IP</a>
                         </li> 
 
                         @endauth
