@@ -3,44 +3,53 @@
 @section('content')
 
 <body>
-    <br>
     <div class="container">
 
-        <h1>User Details</h1>
-
-        <br>
         <div class="column left">
-            <img class="img-responsive" src="{{asset('img/user01.png')}}" width="382" height="382">
+            <img class="img img-responsive" src="{{asset('img/user01.png')}}">
         </div>
 
-        <font size="3">
+        <br>
+        
+        
         <div class="column right">
-            <h3>ข้อมูลของ {{$user->username}}</h3>
+            <h3>
+                <i class="far fa-address-book"></i>
+                ข้อมูลของ {{$user->username}}
+            </h3>
+
             <hr>
+            
             <div class="row">
                 <div class="col-md-6">
                     ชื่อ-นามสกุล : {{$user->name}}
                 </div>
                 <div class="col-md-6">
-                    ตำแหน่ง : {{$user->position}}
+                    <i style="margin-right: 5px" class="fas fa-mobile-alt"></i>
+                    {{ $user->tell }}
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6">
-                    เบอร์โทร : {{$user->tell}}
+                    ตำแหน่ง : {{$user->position}}
                 </div>
                 <div class="col-md-6">
-                    อีเมล : {{$user->email}}
+                    <i class="fas fa-envelope"></i>
+                        {{ $user->email }}
                 </div>
             </div>
-            <br><br><br><br>
-            <br><br><br><br>
+
+            <br><br><br><br><br><br><br><br>
+            
             <footer class="col-md-12 text-right">
-                <a href="{{ route('user.crud') }}" class="btn btn-xs btn-danger"> back </a>
+                <a href="{{ route('user.crud') }}">
+                    <button class="btn_crud btn_crud4">
+                        กลับ
+                    </button>
+                </a>
             </footer>
         </div>
-    </font>
     </div>
 </div>
 </body>

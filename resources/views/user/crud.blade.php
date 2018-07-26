@@ -3,7 +3,6 @@
 @section('content')
 
 <body>
-
     @if (session('msg'))
     <div class="alert alert-success">
         {{ session('msg') }}
@@ -11,40 +10,42 @@
     @endif
 
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-10">
-            </div>
-            <div class="col-md-2">
-                <a href="{{ route('user.create') }}" class="btn btn-success">Create User</a>
-            </div>
-        </div>
 
-        <table>
-            <!-- #CDB380 -->
-            <thead class="table" style="background-color: #F28750">
-                <h4>
-                    <tr>
-                        <!-- sum is must be 100% -->
-                        <td width="23%">Name</td>
-                        <td width="15%">Position</td>
-                        <td width="23%">Email</td>
-                        <td width="19%">Tell</td>
-                        <td class="text-center" width="20%">Action</td>
-                    </tr>
-                </h4>
+        <table style="width: 100%">
+            <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
+                <tr>
+                    <!-- sum is must be 100% -->
+                    <td width="5%">ลำดับ</td>
+                    <td width="23%">ชื่อ</td>
+                    <td width="15%">ตำแหน่ง</td>
+                    <td width="23%">E-mail</td>
+                    <td width="13%">เบอร์โทรศัพท์</td>
+                    <td class="text-center" width="20%">
+                        <a href="{{ route('user.create') }}" class="crud btn_crud btn_crud5">
+                            <i class="fas fa-plus"></i>
+                            เพิ่มผู้ใช้
+                        </a>
+                    </td>
+                </tr>
             </thead>
             <tbody class="table">
-                @foreach($users as $user)
+                @foreach($users as $key => $user)
                 <tr>
+                    <td class="text-center">{{ ++$key }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->position }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->tell }}</td>
-                    <td>
-                        <a href="{{ route('user.show',$user->id) }}" class="btn_crud btn_crud1">detail</a>
-                        <a href="{{ route('user.edit', $user->id) }}" class="btn_crud btn_crud2">edit</a>
-                        <a href="{{ route('user.delete', $user->id) }}" class="btn_crud btn_crud3">delete</a>
+                    <td class="text-center">
+                        <a href="{{ route('user.show',$user->id) }}" class="crud btn_crud btn_crud1">
+                            <i class="fas fa-info"></i>
+                        </a>
+                        <a href="{{ route('user.edit', $user->id) }}" class="crud btn_crud btn_crud2">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="{{ route('user.delete', $user->id) }}" class="crud btn_crud btn_crud3">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach
