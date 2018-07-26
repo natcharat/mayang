@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+<div class="container">
+    <h1>คำขอลางาน</h1>
+    <hr>
+</div>
 
 @foreach($requests as $r)
 <div class="container">
