@@ -54,9 +54,11 @@ Route::get('/user/show/{id}','UserController@show')->name('user.show');
 Route::get('/user/delete/{id}','UserController@delete')->name('user.delete');
 Route::patch('user/update/{id}','UserController@update')->name('user.update');
 
+
 // send leave
 Route::get('add','LeaveController@create');
 Route::post('add','LeaveController@store');
+
 Route::get('Notice_show','NoticeController@show_notice');
 
 //manage ip

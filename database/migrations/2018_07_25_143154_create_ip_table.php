@@ -15,7 +15,7 @@ class CreateIpTable extends Migration
     {
         Schema::create('ip', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ip');
+            $table->text('ip');
             $table->timestamps();
         });
     }

@@ -13,7 +13,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -32,7 +31,6 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
-
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -76,6 +74,7 @@ div.card {
 </style>
 
 <body>
+    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
@@ -102,7 +101,9 @@ div.card {
                         </li>
                         <li class="nav-itemnull">
                             <a href="/notice" style="color: white">ประกาศบริษัท</a>
-
+                        </li>
+                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
+                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
                         </li>
 
                         @endauth
