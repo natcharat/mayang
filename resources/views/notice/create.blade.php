@@ -1,16 +1,9 @@
-<!doctype html>
-<head>
-    <title>Creat Notice</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('js/app.js')}}">
-</head>
+@extends('layouts.admin')
 
-<body style="font-family: 'Kanit', sans-serif;">
+@section('content')
 
-    <br><br>
+<body>
     <div class="container">
-
-        <h1>Create Notice</h1>
 
         @if($errors->any())
         <ul class="alert alert-danger">
@@ -67,4 +60,4 @@
 
 </body>
 
-</html>
+@endsection

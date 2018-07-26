@@ -97,20 +97,17 @@ div.card {
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                        
-                        <li class="nav-item {{ Request::segment(1) === '/report' ? 'active' : null }}">
+
+                        <li class="nav-item">
+                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
-                        
-
-                        <li class="nav-item {{ Request::segment(1) === '/request' ? 'active' : null }}">
-                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
-
-                        </li>  
-                        <li class="nav-item {{ Request::segment(1) === '/create-user' ? 'active' : null }}">
+                        <li class="nav-itemll">
                             <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/create-notice' ? 'active' : null }}">
+                        <li class="nav-itemnull">
                             <a href="/notice" style="color: white">ประกาศบริษัท</a>
 
                         </li>

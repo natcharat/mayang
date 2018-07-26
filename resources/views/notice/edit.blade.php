@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 
-<body style="font-family: 'Kanit', sans-serif;"> 
+<body> 
     <br><br>
     <div class="container">
 
