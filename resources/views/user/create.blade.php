@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-6">
                             {!! Form::label('password', 'รหัสผ่าน') !!}
-                            {!! Form::password('password', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('password', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
                 </div>
@@ -88,16 +88,10 @@
 
                 <footer class="col-md-12 text-right">
                     <div class="form-group align-center">
-
                         {!! Form::submit('ตกลง', ['class' => 'btn_crud btn_crud1', 'style' => 'font-size: 16px']) !!}
                         {!! Form::close() !!}
                     </div>
                 </footer>
-                <a href="/user">
-                    <button class="btn_crud btn_crud4">
-                        ยกเลิก
-                    </button>
-                </a>
             </div>
         </div>
     </div>

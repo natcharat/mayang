@@ -62,11 +62,6 @@
                         </div>
                     </footer>
                     {!! Form::close() !!}
-                    <a href="/user">
-                        <button class="btn_crud btn_crud4">
-                            ยกเลิก
-                        </button>
-                    </a>
                 </div>
             </div>
         </div>

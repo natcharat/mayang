@@ -17,14 +17,8 @@
             </center>
             @endforeach
         </ul>
+
         @endif
-        
-        <div class="row"> 
-            <footer class="col-md-12 text-right">
-                <a href="{{ route('notice.crud') }}" class="btn btn-xs btn-danger"> back </a>
-            </footer>
-        </div>
-        <br>
         
         <div class="section-form">
             {!! Form::open(['route' => 'notice.store', 'method' => 'post', 'files' => true]) !!}
@@ -50,14 +44,12 @@
 
             <footer class="col-md-12 text-right">
                 <div class="form-group align-center">
-                    {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit('ตกลง', ['class' => 'btn_crud btn_crud1']) !!}
                 </div>
             </footer>
             {!! Form::close() !!}
         </div>
-
     </div>
-
 </body>
 
 @endsection
