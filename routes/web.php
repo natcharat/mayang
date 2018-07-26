@@ -63,7 +63,7 @@ Route::get('Notice_show','NoticeController@show_notice');
 
 //manage ip
 Route::get('/ip/manage','IpController@index')->name('ip.manage');
-Route::post('/ip/manage/store','IpConm,tore')->name('ip.store');
+Route::post('/ip/manage/store','IpController@store')->name('ip.store');
 
 
 
