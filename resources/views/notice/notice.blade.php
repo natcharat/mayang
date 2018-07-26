@@ -28,6 +28,13 @@
   background-color:#CFC;
   word-wrap:break-word;
 }
+.p {
+ font-size:1em;
+ line-height:1em;
+ height:5.4em;
+ border:3px solid #00ACEE;
+ overflow: hidden;
+}
 
 </style>
 
@@ -57,9 +64,11 @@
       </a>
     </div>
 
-    <div class="panel-body" id="mylayout_2">
+    <div class="panel-body p" id="mylayout_2">
       <font color="#669933">
-        {{$notice->body}}
+        
+          {{$notice->body}}
+        
       </font>
     </div>
 
