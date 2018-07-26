@@ -54,19 +54,16 @@ Route::get('/user/show/{id}','UserController@show')->name('user.show');
 Route::get('/user/delete/{id}','UserController@delete')->name('user.delete');
 Route::patch('user/update/{id}','UserController@update')->name('user.update');
 
-//create leave
+
+// send leave
 Route::get('add','LeaveController@create');
 Route::post('add','LeaveController@store');
-Route::get('leave','BoxController@index');
-Route::delete('{id}','LeaveController@destroy');
 
 Route::get('Notice_show','NoticeController@show_notice');
 
-Route::get('Notice','NoticeController@index');
-
 //manage ip
 Route::get('/ip/manage','IpController@index')->name('ip.manage');
-Route::post('/ip/manage/store','IpController@store')->name('ip.store');
+Route::post('/ip/manage/store','IpConm,tore')->name('ip.store');
 
 
 
