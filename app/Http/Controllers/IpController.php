@@ -11,9 +11,16 @@ use Illuminate\Contracts\Encryption\DecryptException;
 class IpController extends Controller
 {
     public function index(){
-        $ip = Ip::orderBy('updated_at', 'desc')->first();
-        $ip->ip = decrypt($ip->ip);
 
+        $ip = Ip::orderBy('updated_at', 'desc')->first();
+
+        if ($ip == null) {
+            $ip = new Ip;
+            $ip->ip = 'none';
+        } else {
+            $ip->ip = decrypt($ip->ip);
+        }
+        
         return view('ip.manage',compact('ip'));
     }
 

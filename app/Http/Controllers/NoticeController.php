@@ -23,7 +23,7 @@ class NoticeController extends Controller
     }
 
     public function create(){
-        $user_lists = User::all();
+        $user_lists = User::where('type',0)->get();
         $notice_list = Notice_list::all();
         return view('notice.create',compact('user_lists'));
     }
@@ -50,7 +50,7 @@ class NoticeController extends Controller
     }
 
     public function edit($id){
-        $user_lists = User::all();
+        $user_lists = User::where('type',0)->get();
         $notice = Notice::find($id);
         $notice_lists = Notice_list::select('user_id')->where('notice_id',$id)->get();
         foreach ($notice_lists as $key => $notice_list) {
