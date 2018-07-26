@@ -13,27 +13,41 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <style> 
   html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-  body {
-   background: url(assets/img/bg1.jpg) no-repeat center center fixed;
-   background-size: cover;
- }
- #text_right { text-align:right; }
- word-wrap:break-word;
- div#mylayout_2{
-  display:block;
-  width:100px;
-  border:1px solid #09C;
-  background-color:#CFC;
+  
+  #text_right { text-align:right; }
   word-wrap:break-word;
+  div#mylayout_2{
+    display:block;
+    width:100px;
+    border:1px solid #09C;
+    background-color:#CFC;
+    word-wrap:break-word;
+
+  }
+  .p {
+   font-size:1.2em;
+   line-height:3em;
+   height:5em;
+   border:3px solid #8A8E98;
+   overflow: hidden;   
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+
+ }
+ .font{
+  font-family: 'Kanit', sans-serif;
+  font-size: ;
 }
-.p {
- font-size:1em;
- line-height:1em;
- height:5.4em;
- border:3px solid #00ACEE;
- overflow: hidden;
+.divcurcle {
+  border-radius: 25px;
+  border: 2px solid #8A8E98;
+  padding: 200px; 
+  width: 200px;
+  height: 150px;
 }
 
 </style>
@@ -43,50 +57,43 @@
 
 <body >
   <br><br>
-  <div class="container" >
-    <div class="jumbotron text-center" style=" background-image:url(assets/img/bg2.jpg)">
-
+  <div class="container font " >
+    <div class="jumbotron text-center" style=" background-color:#3c4254">
       <h1 class="w3-xxlarge w3-text-white">
         <span class="w3-padding w3-black w3-opacity-min font3" >
           <b>ประกาศบริษัท TECMOVE</b>
         </span> 
-      </h1>
-      
+      </h1>      
     </div>
 
     @foreach($some_notice as $notice)
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-       <a>
+    <div class="pane font" >
+      <div class="panel-heading" style="background-color: #8A8E98">       
         <P Align=right>date</P>
-        <FONT SIZE="4"><B><P Align=left>{{$notice->topic}}</P></B></FONT>
-      </a>
-    </div>
+        <FONT SIZE="5"><B><P Align=left>{{$notice->topic}}</P></B></FONT>
 
-    <div class="panel-body p" id="mylayout_2">
-      <font color="#669933">
-        
-          {{$notice->body}}
-        
-      </font>
-    </div>
+      </div>
 
-    <div class="panel-footer">
-      <P Align=right>
-        <a href="{{ route('notice.show_user',$notice->id) }}" class="btn btn-xs btn-primary">Detail</a>
+      <div class="panel-body p" id="mylayout_2">
+        <font color="">        
+          {{$notice->body}}        
+        </font>
+      </div>
+
+      <div class="panel-footer" style="background-color: #8A8E98">
+        <P Align=right>
+          <a href="{{ route('notice.show_user',$notice->id) }}" class="btn btn-md btn-success">อ่านเพิ่ม</a>   
+        </P>
+      </div>
+
+    </div><br>
+    @endforeach
 
 
-        
-      </P>
-    </div>
+
+
   </div>
-  @endforeach
-
-
-
-
-</div>
 
 </body>
 </html>

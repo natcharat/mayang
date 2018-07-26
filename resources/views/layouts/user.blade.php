@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 </head>
 
 <style>
@@ -56,6 +57,9 @@ div.clock {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
+}
+.fontuser{
+    font-family: 'Kanit', sans-serif;
 }
 </style>
 
