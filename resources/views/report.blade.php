@@ -27,8 +27,8 @@
 
     <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
     <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
 
@@ -74,7 +74,7 @@ div.card {
 </style>
 
 <body>
-    
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
