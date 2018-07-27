@@ -27,8 +27,15 @@ class IpController extends Controller
     public function store(IpRequest $request){
 
         $ip = Ip::orderBy('updated_at', 'desc')->first();
-        $ip->ip = encrypt($request->ip);
-        $ip->update();
+        
+        if ($ip == null) {
+            $ip = new Ip;
+            $ip->ip = encrypt($request->ip);
+            $ip->save();
+        } else {
+            $ip->ip = encrypt($request->ip);
+            $ip->update();
+        }
 
         return redirect()->route('ip.manage');
     }

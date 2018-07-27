@@ -15,12 +15,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <!-- --------------------------------------------- -->
     
@@ -39,6 +41,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pattaya|Trirong" rel="stylesheet">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -137,25 +140,38 @@
 
 }
 html, body {
+    font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-
+a.navlink:visited {
+    color: white;
+    text-decoration: none;
+}
+a.navlink:active, a.navlink:hover {
+    color: #FCE1D3;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
-
-a {
-    color: white;
-}
-
 div.clock {
     color: #3C4254;
     font-size: 100px;
 }
-
+div.card {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
+}
 .timeBtn {
     background-color: #3C4254;
     border: none;
@@ -209,13 +225,32 @@ div#mylayout_2{
     border-color: black;
     border-radius: 30px;
 }
+.btn_crud {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_crud1 {
+    background-color: #0089E5; /*blue button*/
+    padding: 5px 15px;
+}
+.btn_crud3 {
+    background-color: #F44336; /*red button*/
+    padding: 5px 11px;
+}
 </style>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
+                <a class="navbar-brand" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -227,13 +262,13 @@ div#mylayout_2{
                     <ul class="navbar-nav mr-auto">
                         @auth
                         <li class="nav-item">
-                            <a href="/timerecord_in"><br>บันทึกเวลา</a>
+                            <a class="navlink"  href="/timerecord">บันทึกเวลา</a>
                         </li>
                         <li class="nav-item">
-                            <a href="add"><br>ส่งคำขอ</a>
+                            <a class="navlink"  href="/add">ส่งคำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Notice_show"><br>ประกาศบริษัท</a>
+                            <a class="navlink"  href="/Notice_show">ประกาศบริษัท</a>
                         </li>
                         @else
 
@@ -256,28 +291,28 @@ div#mylayout_2{
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
+                                <a class="dropdown-item" href="/changePassword">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
 
-                    @endguest
-                </ul>
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    ออกจากระบบ
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    
-</div>
-<main class="py-4">
-    @yield('content')
-</main>
+        </nav>
+    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 </html>
