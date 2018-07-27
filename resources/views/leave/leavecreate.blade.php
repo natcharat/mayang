@@ -4,7 +4,7 @@
 
 <body class="font1">
 
-  <div class="container" style="background-color:">
+  <div class="container">
     <div class="form-style-2">
       <div class="form-style-2-heading">แบบฟอร์มลางานบริษัท Tecmove</div>
 
