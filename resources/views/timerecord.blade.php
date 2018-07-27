@@ -3,9 +3,22 @@
 @section('content')
 
 <body>
-	<br><br><br>
 	<div class="container">
 		<div class="row">
+            <body onload="startTime()">
+                <div class="containner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            
+                                <div class="clock" id="txt">
+
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </body>
+
             <script>
                 function startTime() {
                     var today = new Date();
@@ -18,9 +31,10 @@
                     var t = setTimeout(startTime, 500);
                 }
                 function checkTime(i) {
-            	   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-            	   return i;
+                   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                   return i;
                 }
+
             </script>            
             <body onload="startTime()">
                 <div class="container">
@@ -36,8 +50,6 @@
                 </div>
                 <br>
             </body>
-
-
         </div>
         <center><br><br>
             <div class="container">
@@ -51,6 +63,7 @@
                         @else
                         <h2>{{$time->time_in}}</h2>
                         @endif
+
 
                     </div>
                     <div class="col-md-4">
@@ -67,6 +80,7 @@
                     </div>
                 </div>
             </div>
+
 
             
         </center>
@@ -101,9 +115,11 @@
                 if (IP == res.ip) {
                     $('#time').attr('disabled', false);
                 }
+
             }
-        })
-    </script>
+        }
+    })
+</script>
 
 </body>
 @endsection

@@ -22,30 +22,32 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 
 <style>
 html, body {
+    font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-
+a.navlink:visited {
+    color: white;
+    text-decoration: none;
+}
+a.navlink:active, a.navlink:hover {
+    color: #FCE1D3;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
-
-a {
-    color: white;
-}
-
 div.clock {
     color: #3C4254;
     font-size: 100px;
 }
-
 .timeBtn {
     background-color: #3C4254;
     border: none;
@@ -100,7 +102,7 @@ div#mylayout_2{
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
+                <a class="navbar-brand" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -112,13 +114,13 @@ div#mylayout_2{
                     <ul class="navbar-nav mr-auto">
                         @auth
                         <li class="nav-item">
-                            <a href="/timerecord_in">บันทึกเวลา</a>
+                            <a class="navlink"  href="/timerecord">บันทึกเวลา</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">ส่งคำขอ</a>
+                            <a class="navlink"  href="/add">ส่งคำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">ประกาศบริษัท</a>
+                            <a class="navlink"  href="/Notice_show">ประกาศบริษัท</a>
                         </li>
                         @else
 

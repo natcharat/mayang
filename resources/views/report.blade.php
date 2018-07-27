@@ -49,23 +49,24 @@
 </head>
 
 <style>
-html {
-    background-color: white;
-    color: #3C4254;
-}
-
-body {
+html, body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-
+a.navlink:visited {
+    color: white;
+    text-decoration: none;
+}
+a.navlink:active, a.navlink:hover {
+    color: #FCE1D3;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
-
 div.card {
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
     padding: 5px;
@@ -78,8 +79,8 @@ div.card {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" style="color: #EF6924">
+                    Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -91,24 +92,23 @@ div.card {
                         @auth
 
                         <li class="nav-item">
-                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
+                            <a class="navlink"  href="/request" style="color: white; position: relative;">คำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
+                            <a class="navlink"  href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
-                        <li class="nav-itemll">
-                            <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-item">
+                            <a class="navlink"  href="/user" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
-                        <li class="nav-itemnull">
-                            <a href="/notice" style="color: white">ประกาศบริษัท</a>
+                        <li class="nav-item">
+                            <a class="navlink"  href="/notice" style="color: white">ประกาศบริษัท</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
-                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
+                        <li class="nav-item">
+                            <a class="navlink"  href="/ip/manage" style="color: white">จัดการ IP</a>
                         </li>
 
                         @endauth
                         
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
