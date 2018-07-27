@@ -58,6 +58,35 @@ div.card {
     font-size: 110px;
 
 }
+@media screen and (max-width: 1024px) {
+    div.card {
+        height: 550px;
+    }
+}
+@media screen and (max-width: 993px) {
+    div.card {
+        height: 500px;
+    }
+    .mayang_brand {
+        color: #EF6924;
+        font-size: 85px;
+}
+@media screen and (max-width: 767px) {
+    div.card {
+        height: 750px;
+    }
+    .mayang_brand {
+        color: #EF6924;
+        font-size: 30px;
+}
+@media screen and (max-width: 415px) {
+    div.card {
+        height: 500px;
+    }
+    .mayang_brand {
+        color: #EF6924;
+        font-size: 50px;
+}
 </style>
 
 <body>
@@ -125,10 +154,6 @@ div.card {
                                             <button style="background-color: #EF6924" type="submit">
                                                 {{ __('Login') }}
                                             </button>
-
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
                                         </div>
                                     </div>
                                 </form>
