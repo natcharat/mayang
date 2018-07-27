@@ -26,12 +26,12 @@ class UserRequest extends FormRequest
         return [
 
             'type' => 'required',
-            'username' => 'required|min:3|max:10000',
-            'password' => 'required|min:4',
+            'username' => 'required|min:3|max:100|unique:users,username',
+            'password' => 'required|min:6',
             'name'=>'required',
             'position'=>'required',
-            'tell'=>'required',
-            'email'=>'required',
+            'tell'=>'required|numeric',
+            'email'=>'required|email|unique:users,email',
         ];
     } 
 
@@ -44,7 +44,12 @@ class UserRequest extends FormRequest
             'name.required' => 'กรุณาระบุชื่อ-นามสกุล',
             'position.required' => 'กรุณาระบุตำแหน่ง',
             'tell.required' => 'กรุณาระบุเบอร์โทร',
+            'tell.numeric' => 'เบอร์โทรศัพท์ต้องเป็นตัวเลขเท่านั้น',
             'email.required' => 'กรุณาระบุอีเมล',
+            'email.unique' => 'อีเมลนี้ไม่สามารถใช้ได้',
+            'email.email' => 'กรุณาระบุอีเมลให้ถูกต้อง',
+            'username.unique' => 'ชื่อแอคเคาท์นี้ไม่สามารถใช้ได้',
+            'password.min' => 'รหัสผ่านต้องมีอย่างน้อย 6 หลัก',
         ];
     }
 }

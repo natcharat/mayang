@@ -3,9 +3,9 @@
 @section('content')
 
 <body>
-	<br><br><br>
 	<div class="container">
 		<div class="row">
+
             <script>
                 function startTime() {
                     var today = new Date();
@@ -18,45 +18,64 @@
                     var t = setTimeout(startTime, 500);
                 }
                 function checkTime(i) {
-            	   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-            	   return i;
-                }
-            </script>
-            <body onload="startTime()">
-                <div class="containner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <center>
-                                <div class="clock" id="txt">
+                   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                   return i;
+               }
 
-                                </div>
-                            </center>
-                        </div>
+           </script>            
+           <body onload="startTime()">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <center>
+                            <div class="clock" id="txt">
+
+                            </div>
+                        </center>
                     </div>
                 </div>
-            </body>
-
-        </div>
-
+            </div>
+            <br>
+        </body>
+    </div>
+    <center><br><br>
         <div class="container">
             <div class="row">
                 <div class="col-2">
                 </div>
                 <div class="col-md-4">
-                    <p>เวลาเข้างาน</p>
+                    <h3><B>เวลาเข้างาน</B></h3>
+                    @if($time == null)
+                    <h2>00:00:00</h2>
+                    @else
+                    <h2>{{$time->time_in}}</h2>
+                    @endif
+
+
                 </div>
                 <div class="col-md-4">
-                    <p>เวลาออกงาน</p>
+                    <h3><B>เวลาออกงาน</B></h3>
+                    @if($time == null)
+                    <h2>00:00:00</h2>
+                    @elseif($time->time_off == '23:59:00')
+                    <h2>00:00:00</h2>
+                    @else
+                    <h2>{{$time->time_off}}</h2>
+                    @endif
                 </div>
                 <div class="col-2">
                 </div>
             </div>
         </div>
 
-        <!-- bUTTON -->
-        <br><br>
+
+        
+    </center>
 
 
+    <!-- button -->
+    <br><br>
+    <center>
         @if ($time == null)
         <a href="{{ url('time_in') }}">
             <button class="timeBtn" id="time" disabled>เข้างาน</button>
@@ -68,23 +87,26 @@
         </a>
 
         @endif
+    </center>
+</div>
 
-    </div>
-    <script type="text/javascript">
-        var IP = {!! json_encode($ip) !!}
+<script type="text/javascript">
+    var IP = {!! json_encode($ip) !!}
 
-          $.ajax({
-            type: 'GET',
-            url: 'https://json.geoiplookup.io',
-            success: function (res) {
-                console.log(res.ip);
-                $("#ip").text(res.ip);
-                if (IP == res.ip) {
-                    $('#time').attr('disabled', false);
-                }
+    $.ajax({
+        type: 'GET',
+        url: 'https://json.geoiplookup.io',
+        success: function (res) {
+            console.log(res.ip);
+            $("#ip").text(res.ip);
+            if (IP == res.ip) {
+                $('#time').attr('disabled', false);
             }
-        })
-    </script>
+
+        }
+    }
+})
+</script>
 
 </body>
 @endsection

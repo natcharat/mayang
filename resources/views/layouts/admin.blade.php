@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -23,8 +22,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-
 </head>
 
 <style>
@@ -64,6 +61,12 @@ tr:nth-child(even) {
 tr, td {
     vertical-align: center;
 }
+@media screen and (max-width: 414px) {
+    nav, ul, li {
+        box-sizing: border-box;
+        max-width: 100%
+    }
+}
 .btn_crud {
     border: none;
     border-radius: 5px;
@@ -73,8 +76,7 @@ tr, td {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    margin: 0px 1px;
-    
+    margin: 0px 1px; 
 }
 .btn_crud1 {
     background-color: #0089E5; /*blue button*/
@@ -96,15 +98,40 @@ tr, td {
     background-color: #4CAF50; /*green button*/
     padding: 5px 11px; 
 }
+@media screen and (max-width: 415px) {
+    table {
+        width: 315px;
+    }
+    thead.table, tbody.table, tr, td {
+        font-size: 4px;
+        box-sizing: border-box;
+    }
+    .btn_crud {
+        font-size: 4px;
+        padding: 2px 2px;
+    }
+    .btn_crud1 {
+        background-color: #0089E5; /*blue button*/
+        padding: 2px 5px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .btn_crud2, .btn_crud3 {
+        padding: 2px 5px;
+    }
+    .btn_crud1{
+        padding: 2px 11px;
+    }
+}
 
 </style>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
+        <nav class="navbar navbar-expand-md navbar-expand-sm navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
-                    {{ config('app.name', 'Ma-Yang') }}
+                <a class="navbar-brand" style="color: #EF6924">
+                    Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -144,31 +171,29 @@ tr, td {
                         </li>
                         @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: white">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false" v-pre style="color: white">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    ออกจากระบบ
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 </body>
 </html>

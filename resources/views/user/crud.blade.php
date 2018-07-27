@@ -15,11 +15,10 @@
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
                 <tr>
                     <!-- sum is must be 100% -->
-                    <td width="5%">ลำดับ</td>
-                    <td width="23%">ชื่อ</td>
-                    <td width="15%">ตำแหน่ง</td>
-                    <td width="23%">E-mail</td>
-                    <td width="13%">เบอร์โทรศัพท์</td>
+                    <td width="25%">ชื่อ</td>
+                    <td width="16%">ตำแหน่ง</td>
+                    <td width="24%">E-mail</td>
+                    <td width="15%">เบอร์โทรศัพท์</td>
                     <td class="text-center" width="20%">
                         <a href="{{ route('user.create') }}" class="crud btn_crud btn_crud5">
                             <i class="fas fa-plus"></i>
@@ -29,9 +28,8 @@
                 </tr>
             </thead>
             <tbody class="table">
-                @foreach($users as $key => $user)
+                @foreach($users as $user)
                 <tr>
-                    <td class="text-center">{{ ++$key }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->position }}</td>
                     <td>{{ $user->email }}</td>

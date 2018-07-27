@@ -36,9 +36,9 @@
                                 {!! Form::label('name', 'ชื่อ - นามสกุล') !!}
                                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
                             </div>
-                            <div class="col-md-6">
-                                {!! Form::label('position', 'ตำแหน่ง') !!}
-                                {!! Form::text('position', null, ['class' => 'form-control']) !!}
+                            <div class="col-md-6" style="">
+                                {!! Form::label('position', 'ตำแหน่ง') !!} <br>
+                                {!! Form::select('position' ,['พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
 
                     <footer class="col-md-12 text-right">
                         <div class="form-group align-center">
-                            {!! Form::submit('ตกลง', ['class' => 'btn_crud btn_crud1', 'style' => 'font-size: 16px']) !!}
+                            {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
                         </div>
                     </footer>
                     {!! Form::close() !!}
