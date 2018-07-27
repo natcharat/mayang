@@ -11,12 +11,20 @@
 <body >
   <br><br>
   <div class="container font " >
-    <div class="jumbotron text-center" style=" background-color:#EF6924">
+    <div class="jumbotron text-center divhead" style=" background-color:#EF6924">
       <h1 class="w3-xxlarge w3-text-white">        
         <b>ประกาศบริษัท TECMOVE</b>        
       </h1>      
     </div>
+    @if($some_notice == 0)
 
+      <div class="jumbotron text-center " style=" background-color:#">
+      <h1 class="w3-xxlarge w3-text-white">        
+        <font color="black"><b>ยังไม่มีประกาศ</b></font>        
+      </h1>      
+    </div>
+
+    @else
     @foreach($some_notice as $notice)
 
     <div class="pane font" >
@@ -44,7 +52,7 @@
 
     </div><br>
     @endforeach
-
+    @endif
 
 
 
