@@ -3,9 +3,22 @@
 @section('content')
 
 <body>
-	<br><br><br>
 	<div class="container">
 		<div class="row">
+            <body onload="startTime()">
+                <div class="containner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            
+                                <div class="clock" id="txt">
+
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </body>
+
             <script>
                 function startTime() {
                     var today = new Date();
@@ -18,27 +31,14 @@
                     var t = setTimeout(startTime, 500);
                 }
                 function checkTime(i) {
-            	   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-            	   return i;
+                   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                   return i;
                 }
             </script>
-            <body onload="startTime()">
-                <div class="containner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <center>
-                                <div class="clock" id="txt">
-
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </body>
 
         </div>
 
-        <div class="container">
+        
             <div class="row">
                 <div class="col-2">
                 </div>
@@ -51,7 +51,6 @@
                 <div class="col-2">
                 </div>
             </div>
-        </div>
 
         <!-- bUTTON -->
         <br><br>
@@ -70,21 +69,21 @@
         @endif
 
     </div>
-    <script type="text/javascript">
-        var IP = {!! json_encode($ip) !!}
+<script type="text/javascript">
+    var IP = {!! json_encode($ip) !!}
 
-          $.ajax({
-            type: 'GET',
-            url: 'https://json.geoiplookup.io',
-            success: function (res) {
-                console.log(res.ip);
-                $("#ip").text(res.ip);
-                if (IP == res.ip) {
-                    $('#time').attr('disabled', false);
-                }
+    $.ajax({
+        type: 'GET',
+        url: 'https://json.geoiplookup.io',
+        success: function (res) {
+            console.log(res.ip);
+            $("#ip").text(res.ip);
+            if (IP == res.ip) {
+                $('#time').attr('disabled', false);
             }
-        })
-    </script>
+        }
+    })
+</script>
 
 </body>
 @endsection

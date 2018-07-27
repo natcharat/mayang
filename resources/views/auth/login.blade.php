@@ -73,7 +73,7 @@ div.card {
 }
 @media screen and (max-width: 767px) {
     div.card {
-        height: 750px;
+        height: 725px;
     }
     .mayang_brand {
         color: #EF6924;
