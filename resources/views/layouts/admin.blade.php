@@ -78,6 +78,17 @@ tr, td {
     cursor: pointer;
     margin: 0px 1px; 
 }
+.btn_back {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
 .btn_crud1 {
     background-color: #0089E5; /*blue button*/
     padding: 5px 15px;
