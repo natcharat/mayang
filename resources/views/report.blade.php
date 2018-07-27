@@ -77,7 +77,7 @@ div.card {
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
-                    {{ config('app.name', 'Laravel') }}
+                    Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -94,13 +94,13 @@ div.card {
                         <li class="nav-item">
                             <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
-                        <li class="nav-itemll">
-                            <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-item">
+                            <a href="/user" style="color: white">ข้อมูลผู้ใช้</a>
                         </li>
-                        <li class="nav-itemnull">
+                        <li class="nav-item">
                             <a href="/notice" style="color: white">ประกาศบริษัท</a>
                         </li>
-                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
+                        <li class="nav-item">
                             <a href="/ip/manage" style="color: white">จัดการ IP</a>
                         </li>
 
