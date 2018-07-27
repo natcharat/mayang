@@ -3,6 +3,8 @@
 @section('content')
 
 <body>
+	<br>
+
 	<div class="container">
 		<div class="row">
 
@@ -25,13 +27,30 @@
            </script>            
            <body onload="startTime()">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <center>
-                            <div class="clock" id="txt">
 
-                            </div>
-                        </center>
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-md-4">
+                        <h3><B>เวลาเข้างาน</B></h3>
+                        @if($time == null)
+                        <h2 style="color: #EF6924">00:00:00</h2>
+                        @else
+                        <h2 style="color: #EF6924">{{$time->time_in}}</h2>
+                        @endif
+
+                    </div>
+                    <div class="col-md-4">
+                        <h3><B>เวลาออกงาน</B></h3>
+                        @if($time == null)
+                        <h2 style="color: #EF6924">00:00:00</h2>
+                        @elseif($time->time_off == '23:59:00')
+                        <h2 style="color: #EF6924">00:00:00</h2>
+                        @else
+                        <h2 style="color: #EF6924">{{$time->time_off}}</h2>
+                        @endif
+                    </div>
+                    <div class="col-2">
                     </div>
                 </div>
             </div>

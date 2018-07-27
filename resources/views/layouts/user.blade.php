@@ -23,6 +23,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <!-- --------------------------------------------- -->
     
@@ -41,7 +44,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pattaya|Trirong" rel="stylesheet">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -220,6 +223,7 @@ div#mylayout_2{
   width: 200px;
   height: 150px;
 }
+
 .divhead{
     border-style: solid;
     border-color: black;
@@ -244,6 +248,17 @@ div#mylayout_2{
     background-color: #F44336; /*red button*/
     padding: 5px 11px;
 }
+@media screen and (max-width: 415px) {
+    div.clock {
+    font-size: 80px;
+}
+}
+@media screen and (min-width: 768px) {
+   div.clock {
+    font-size: 80px;
+}
+}
+
 </style>
 
 <body>
@@ -291,7 +306,6 @@ div#mylayout_2{
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
                                 <a class="dropdown-item" href="/changePassword">
                                     เปลี่ยนรหัสผ่าน
                                 </a>
