@@ -126,6 +126,16 @@ div#mylayout_2{
     background-color: #F44336; /*red button*/
     padding: 5px 11px;
 }
+@media screen and (max-width: 415px) {
+    div.clock {
+    font-size: 80px;
+}
+}
+@media screen and (min-width: 768px) {
+   div.clock {
+    font-size: 80px;
+}
+}
 
 </style>
 
