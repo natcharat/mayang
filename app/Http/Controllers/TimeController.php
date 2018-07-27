@@ -19,8 +19,14 @@ class TimeController extends Controller
         $time = Time::where('name', Auth::user()->name)
         ->where('date',date('d-m-Y'))->first();
         $ip = Ip::orderBy('updated_at', 'desc')->first();
-        $ip = decrypt($ip->ip);
-        // dd($ip);    
+
+        if ($ip == null) {
+            $ip = new Ip;
+            $ip->ip = 'none';
+        } else {
+            $ip = decrypt($ip->ip);
+        }
+        
         return view('timerecord', compact('time', 'ip'));
     }
     public function In(){ 
