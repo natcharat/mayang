@@ -56,7 +56,6 @@ class NoticeController extends Controller
         foreach ($notice_lists as $key => $notice_list) {
             $keep_user[$key] = $notice_list->user_id;
         }
-        // dd($keep_user);
 
         return view('notice.edit', compact('notice','user_lists','keep_user'));
     }

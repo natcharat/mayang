@@ -47,6 +47,7 @@ class UserRequest extends FormRequest
             'tell.numeric' => 'เบอร์โทรศัพท์ต้องเป็นตัวเลขเท่านั้น',
             'email.required' => 'กรุณาระบุอีเมล',
             'email.unique' => 'อีเมลนี้ไม่สามารถใช้ได้',
+            'email.email' => 'กรุณาระบุอีเมลให้ถูกต้อง',
             'username.unique' => 'ชื่อแอคเคาท์นี้ไม่สามารถใช้ได้',
             'password.min' => 'รหัสผ่านต้องมีอย่างน้อย 6 หลัก',
         ];
