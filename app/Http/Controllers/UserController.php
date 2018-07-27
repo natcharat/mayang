@@ -43,7 +43,7 @@ class UserController extends Controller
         return view('user.edit',compact('user'));
     }
 
-    public function update($id, Request $request){
+    public function update(Request $request,$id){
 
         $this->validate($request, [
             'name' => 'required',
@@ -52,7 +52,6 @@ class UserController extends Controller
             'tell' => 'required',
             'email' => 'required',
         ]);
-
         $user = User::find($id);
         $user->username = $request->username;
         $user->name = $request->name;

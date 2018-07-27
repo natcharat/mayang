@@ -3,26 +3,53 @@
 @section('content')
 
 <body>
-    @foreach($detail as $d)
-    <h1>ชื่อ: {{ $d->name }}
-        <br>ตำแหน่ง: {{ $d->position }}
-        <br>ลาตั้งแต่วันที่ &nbsp {{ $d->start }} &nbsp ถึง {{ $d->stop }}
-        <br>ประเภทการลา: {{ $d->type }}
-        <br>สาเหตุ: {{ $d->detail }}
-        <br>
-        @if($d->img)
-        <center>
-            <img src="{{ url($d->img)}}"  class="img-responsive" style="width:100%;height:100%">
-        </center><br><br>
+    <div class="container">
+        <h2>คำขอลาหยุดของ {{$detail->name}}</h2>
+        <hr>
 
+        <br>
+        <font size="4">
+            <div class="row ">
+                <div class="col-md-6">
+                    ชื่อ-นามสกุล : {{ $detail->name }}
+                </div>
+                <div class="col-md-6">
+                    ตำแหน่ง : {{ $detail->position }}
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    วันที่ขอลาหยุด : {{ $detail->start }} ถึง {{ $detail->stop }}
+                </div>
+                <div class="col-md-6">
+                    ประเภทการลา : {{ $detail->type }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    สาเหตุ : {{ $detail->detail }}
+                </div>
+            </div>
+        </font>
+        <br><br>
+
+        <div class="col-md-12">
+           @if($detail->img)
+           <center>
+            <img src="{{ url($detail->img)}}"  class="img-responsive" style="width:60%;height:60%">
+        </center><br><br>
         @endif
-    </h1>
-    @endforeach
+    </div>
+    <br>
 
     <!-- approve & disapprove -->
-    <a class="btn btn-primary" href="{{ route('request.disapprove', $d->id) }}" role="button">ไม่อนุมัติ</a>&nbsp&nbsp&nbsp
-    <a class="btn btn-primary" href="{{ route('request.approve', $d->id) }}" role="button">อนุมัติ</a>
-
+    <footer class="col-md-12 text-center">
+        <a class="btn btn-danger" href="{{ route('request.disapprove', $detail->id) }}" role="button">ไม่อนุมัติ</a>&nbsp&nbsp&nbsp
+        <a class="btn btn-success" href="{{ route('request.approve', $detail->id) }}" role="button">อนุมัติ</a>
+    </footer>
+</div>
 </body>
 
 @endsection
