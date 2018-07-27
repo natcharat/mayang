@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <body>
     <div class="container">
 
@@ -66,9 +68,10 @@
                             {!! Form::label('name', 'ชื่อ-นามสกุล') !!}
                             {!! Form::text('name', null, ['class' => 'form-control']) !!}
                         </div>
-                        <div class="col-md-6">
-                            {!! Form::label('position', 'ตำแหน่ง') !!}
-                            {!! Form::text('position', null, ['class' => 'form-control', 'placeholder'=>'พนักงานฝึกงาน , แม่บ้าน ฯลฯ']) !!}
+            
+                        <div class="col-md-6" style="">
+                            {!! Form::label('position', 'ตำแหน่ง') !!} <br>
+                            {!! Form::select('position' ,['พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
                         </div>
                     </div>
                 </div>
