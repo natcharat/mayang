@@ -13,7 +13,7 @@ class BoxController extends Controller
         return view('request.index',compact('requests'));
     }
     public function detail($id){
-        $detail = Box::all()->where('id', 'Like', $id);
+        $detail = Box::all()->where('id', 'Like', $id)->first();
         return view('request.detail', compact('detail'));
     }
     public function approve($id){

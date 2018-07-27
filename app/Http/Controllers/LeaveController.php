@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Leave;
 use Illuminate\Http\Request;
 use App\Http\Requests\LeaveRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LeaveController extends Controller
 {
@@ -16,8 +17,12 @@ class LeaveController extends Controller
 	}
 
 	public function create()
-	{
-		return view('leave.leavecreate');
+	{	
+		$name = Auth::user()->name;
+		$position = Auth::user()->position;
+
+
+		return view('leave.leavecreate',compact('name','position'));
 	}
 
 
@@ -41,7 +46,7 @@ class LeaveController extends Controller
 			$leave->img = $public_path . $image_name;
 		}       
 		$leave->save();
-		return redirect('timerecord')->with('success', 'Car has been successfully added');
+		return redirect('Notice_show')->with('success', 'Car has been successfully added');
 	}
 
 	public function edit($id)
