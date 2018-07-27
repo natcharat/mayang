@@ -67,9 +67,9 @@ class NoticeController extends Controller
     }
 
     public function delete($id){
-       $notice = Notice::where('id',$id)->first();
+     $notice = Notice::where('id',$id)->first();
 
-       if ($notice != null) {
+     if ($notice != null) {
         $notice->delete();
         return redirect()->route('notice.crud')->with(['msg'=> 'Successfully deleted!!']);
     }
@@ -116,14 +116,20 @@ public function show_notice(){
     ->where('user_id',$id_user)
     ->get();
 
-    foreach ($id_notices as $key => $id_notice) {
+    if (count($id_notices) == 0) {
+        $keep_id = 'ยังไม่มีประกาศ';
+        $some_notice = '0';
+    } else {
+        foreach ($id_notices as $key => $id_notice) {
             $keep_id[$key] = $id_notice->notice_id;
+        }
+
+        foreach ($keep_id as $key => $keep_id) {
+            $some_notice[$key] = Notice::where('id',$keep_id)
+            ->first();
+        }
     }
-    
-    foreach ($keep_id as $key => $keep_id) {
-        $some_notice[$key] = Notice::where('id',$keep_id)
-        ->first();
-    } 
+
     
     
     
