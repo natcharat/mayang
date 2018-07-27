@@ -22,6 +22,10 @@ Route::get('/test', function(){
 
 Auth::routes();
 
+// Change Password
+Route::get('/changePassword','ChangePasswordController@showChangePasswordForm');
+Route::post('/changePassword','ChangePasswordController@changePassword')->name('changePassword');
+
 // Report
 Route::get('report', 'ReportController@report');
 

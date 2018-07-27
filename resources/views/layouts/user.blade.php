@@ -48,6 +48,17 @@ div.clock {
     color: #3C4254;
     font-size: 100px;
 }
+div.card {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
+}
 .timeBtn {
     background-color: #3C4254;
     border: none;
@@ -75,14 +86,14 @@ div#mylayout_2{
 
 }
 .p {
- font-size:1.2em;
- line-height:3em;
- height:5em;
- border:3px solid #8A8E98;
- overflow: hidden;   
- white-space: nowrap;
- overflow: hidden;
- text-overflow: ellipsis;
+   font-size:1.2em;
+   line-height:3em;
+   height:5em;
+   border:3px solid #8A8E98;
+   overflow: hidden;   
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 
 }
 .font{
@@ -96,6 +107,26 @@ div#mylayout_2{
   width: 200px;
   height: 150px;
 }
+.btn_crud {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_crud1 {
+    background-color: #0089E5; /*blue button*/
+    padding: 5px 15px;
+}
+.btn_crud3 {
+    background-color: #F44336; /*red button*/
+    padding: 5px 11px;
+}
+
 </style>
 
 <body>
@@ -143,27 +174,27 @@ div#mylayout_2{
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                <a class="dropdown-item" href="/changePassword">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    ออกจากระบบ
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    
-</div>
-<main class="py-4">
-    @yield('content')
-</main>
+        </nav>
+    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 </html>
