@@ -23,7 +23,7 @@
 
 <style>
 html, body {
-    background: url('img/morganblake7.jpg');
+    background-color: #FCC9B0;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;

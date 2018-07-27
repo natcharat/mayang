@@ -16,10 +16,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/test', function(){
-	return view('test');
-});
-
 Auth::routes();
 
 // Change Password
@@ -44,14 +40,14 @@ Route::get('/time_in', 'TimeController@in');
 Route::get('/time_off', 'TimeController@off');
 
 //create notice
-Route::get('/notice','NoticeController@index')->name('notice.crud');
-Route::get('/notice/create','NoticeController@create')->name('notice.create');
-Route::post('/notice/create/store','NoticeController@store')->name('notice.store');
-Route::get('/notice/edit/{id}','NoticeController@edit')->name('notice.edit');
-Route::get('/notice/show/{id}','NoticeController@show')->name('notice.show');
-Route::get('/notice/delete/{id}','NoticeController@delete')->name('notice.delete');
-Route::patch('notice/update/{id}','NoticeController@update')->name('notice.update');
-Route::get('/notice/show_user/{id}','NoticeController@show_user')->name('notice.show_user');
+Route::get('/notice','NoticeController@index')->name('notice.crud')->middleware('admin');
+Route::get('/notice/create','NoticeController@create')->name('notice.create')->middleware('admin');
+Route::post('/notice/create/store','NoticeController@store')->name('notice.store')->middleware('admin');
+Route::get('/notice/edit/{id}','NoticeController@edit')->name('notice.edit')->middleware('admin');
+Route::get('/notice/show/{id}','NoticeController@show')->name('notice.show')->middleware('admin');
+Route::get('/notice/delete/{id}','NoticeController@delete')->name('notice.delete')->middleware('admin');
+Route::patch('notice/update/{id}','NoticeController@update')->name('notice.update')->middleware('admin');
+Route::get('/notice/show_user/{id}','NoticeController@show_user')->name('notice.show_user')->middleware('user');
 
 //create user
 Route::get('/user','UserController@index')->name('user.crud');
@@ -67,7 +63,7 @@ Route::patch('user/update/{id}','UserController@update')->name('user.update');
 Route::get('add','LeaveController@create');
 Route::post('add','LeaveController@store');
 
-Route::get('Notice_show','NoticeController@show_notice');
+Route::get('Notice_show','NoticeController@show_notice')->middleware('user');
 
 //manage ip
 Route::get('/ip/manage','IpController@index')->name('ip.manage');

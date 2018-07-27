@@ -21,10 +21,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- thip code -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
 
+    <script src="{{ asset('js/jsdata.js') }}" defer></script>
     <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
     <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
     <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
@@ -49,24 +47,23 @@
 </head>
 
 <style>
-html, body {
+html {
+    background-color: white;
+    color: #3C4254;
+}
+
+body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-a.navlink:visited {
-    color: white;
-    text-decoration: none;
-}
-a.navlink:active, a.navlink:hover {
-    color: #FCE1D3;
-    text-decoration: none;
-}
+
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
+
 div.card {
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
     padding: 5px;
@@ -79,8 +76,8 @@ div.card {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" style="color: #EF6924">
-                    Ma-Yang
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -92,23 +89,24 @@ div.card {
                         @auth
 
                         <li class="nav-item">
-                            <a class="navlink"  href="/request" style="color: white; position: relative;">คำขอ</a>
+                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/report" style="color: white; position: relative;">การเข้างาน</a>
+                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navlink"  href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                        <li class="nav-itemll">
+                            <a href="/user" style="color: white">เพิ่มผู้ใช้</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navlink"  href="/notice" style="color: white">ประกาศบริษัท</a>
+                        <li class="nav-itemnull">
+                            <a href="/notice" style="color: white">ประกาศบริษัท</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navlink"  href="/ip/manage" style="color: white">จัดการ IP</a>
+                        <li class="nav-item {{ Request::segment(1) === '/manage-ip' ? 'active' : null }}">
+                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
                         </li>
 
                         @endauth
                         
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

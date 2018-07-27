@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LeaveController extends Controller
 {
-
+	public function __construct()
+    {
+        $this->middleware('user');
+    }
 
 	public function index()
 	{

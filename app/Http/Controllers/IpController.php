@@ -10,6 +10,11 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 class IpController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+    
     public function index(){
 
         $ip = Ip::orderBy('updated_at', 'desc')->first();

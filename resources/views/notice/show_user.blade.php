@@ -1,10 +1,6 @@
 @extends('layouts.user')
 
 @section('content')
-<head>
-    <title>Notice Details</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
 
 <body>
     <br><br>
