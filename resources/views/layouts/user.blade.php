@@ -241,6 +241,40 @@ div#mylayout_2{
     background-color: #F44336; /*red button*/
     padding: 5px 11px;
 }
+
+@media screen and (max-width: 415px) {
+    table {
+        width: 315px;
+    }
+    thead.table, tbody.table, tr, td {
+        font-size: 4px;
+        box-sizing: border-box;
+    }
+    .btn_crud {
+        font-size: 4px;
+        padding: 2px 2px;
+    }
+    .btn_crud1 {
+        background-color: #0089E5; /*blue button*/
+        padding: 2px 5px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .btn_crud2, .btn_crud3 {
+        padding: 2px 5px;
+    }
+    .btn_crud1{
+        padding: 2px 11px;
+    }
+}
+
+tr:nth-child(even) {
+    background-color: #D8D9DD
+}
+tr, td {
+    vertical-align: center;
+}
+
 </style>
 
 <body>
@@ -263,6 +297,9 @@ div#mylayout_2{
                         </li>
                         <li class="nav-item">
                             <a class="navlink"  href="/add">ส่งคำขอ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navlink"  href="/myRequest">ประวัติการลา</a>
                         </li>
                         <li class="nav-item">
                             <a class="navlink"  href="/Notice_show">ประกาศบริษัท</a>

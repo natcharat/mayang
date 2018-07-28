@@ -76,7 +76,7 @@
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <font size="4">
-              {!! Form::label('start', 'เรื่มลาวันที่: ') !!}
+              {!! Form::label('start', 'เริ่มลาวันที่: ') !!}
               {!! Form::input('start', 'start',\Carbon\Carbon::now()->format('d-m-Y'),['class'=>'form-control']) !!}
 
               {!! Form::label('stop', 'ถึง วันที่: ') !!}

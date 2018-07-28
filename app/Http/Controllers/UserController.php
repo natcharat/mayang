@@ -15,7 +15,7 @@ class UserController extends Controller
     }
     
     public function index(){
-        $users = User::all();
+        $users = User::where('type',0)->get();
         if(empty($users))
             abort(404);
         return view('user.crud',compact('users'));
