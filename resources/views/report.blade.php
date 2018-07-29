@@ -26,9 +26,7 @@
     <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
     <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
     <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -147,10 +145,10 @@ div.card {
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Time in</th>
-                <th>Time off</th>
+                <th>ชื่อ</th>
+                <th>วันที่</th>
+                <th>เวลาเข้า</th>
+                <th>เวลาออก</th>
             </tr>
         </thead>
         <tbody>
