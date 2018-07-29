@@ -6,104 +6,108 @@
 	<br>
 	<div class="container">
 		<div class="row">
-            <script>
-                function startTime() {
-                    var today = new Date();
-                    var h = today.getHours();
-                    var m = today.getMinutes();
-                    var s = today.getSeconds();
-                    m = checkTime(m);
-                    s = checkTime(s);
-                    document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-                    var t = setTimeout(startTime, 500);
-                }
-                function checkTime(i) {
-            	   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-            	   return i;
-                }
-            </script>            
-            <body onload="startTime()">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <center>
-                                <div class="clock" id="txt">
+            <div id="MyClockDisplay" class="clock"></div>
+            <script type="text/javascript">
 
-                                </div>
-                            </center>
-                        </div>
-                    </div>
+                function showTime(){
+                    var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "";
+
+                if(h == 0){
+                    h = 12;
+                }
+
+                if(h > 12){
+                    h = h - 12;
+                    session = "";
+                }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+
+                setTimeout(showTime, 1000);
+            }
+
+            showTime();
+
+        </script>
+
+    </div>
+    <center><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
                 </div>
-                <br>
-            </body>
+                <div class="col-md-4">
+                    <h3><B>เวลาเข้างาน</B></h3>
+                    @if($time == null)
+                    <h2 style="color: #EF6924">00:00:00</h2>
+                    @else
+                    <h2 style="color: #EF6924">{{$time->time_in}}</h2>
+                    @endif
 
-
-        </div>
-        <center><br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-2">
-                    </div>
-                    <div class="col-md-4">
-                        <h3><B>เวลาเข้างาน</B></h3>
-                        @if($time == null)
-                        <h2 style="color: #EF6924">00:00:00</h2>
-                        @else
-                        <h2 style="color: #EF6924">{{$time->time_in}}</h2>
-                        @endif
-
-                    </div>
-                    <div class="col-md-4">
-                        <h3><B>เวลาออกงาน</B></h3>
-                        @if($time == null)
-                        <h2 style="color: #EF6924">00:00:00</h2>
-                        @elseif($time->time_off == '23:59:00')
-                        <h2 style="color: #EF6924">00:00:00</h2>
-                        @else
-                        <h2 style="color: #EF6924">{{$time->time_off}}</h2>
-                        @endif
-                    </div>
-                    <div class="col-2">
-                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3><B>เวลาออกงาน</B></h3>
+                    @if($time == null)
+                    <h2 style="color: #EF6924">00:00:00</h2>
+                    @elseif($time->time_off == null)
+                    <h2 style="color: #EF6924">00:00:00</h2>
+                    @else
+                    <h2 style="color: #EF6924">{{$time->time_off}}</h2>
+                    @endif
+                </div>
+                <div class="col-2">
                 </div>
             </div>
+        </div>
 
-            
-        </center>
+        
+    </center>
 
 
-        <!-- button -->
-        <br><br>
-        <center>
-            @if ($time == null)
-            <a href="{{ url('time_in') }}">
-                <button class="timeBtn" id="time" disabled>เข้างาน</button>
-            </a>
+    <!-- button -->
+    <br><br>
+    <center>
+        @if ($time == null)
+        <a href="{{ url('time_in') }}">
+            <button class="timeBtn" id="time" disabled>เข้างาน</button>
+        </a>
 
-            @elseif ($time->status == 'in')
-            <a href="{{ url('time_off') }}">
-                <button class="timeBtn" id="time" disabled>ออกงาน</button>
-            </a>
+        @elseif ($time->status == 'in')
+        <a href="{{ url('time_off') }}">
+            <button class="timeBtn" id="time" disabled>ออกงาน</button>
+        </a>
+        @endif
+    </center>
+</div>
 
-            @endif
-        </center>
-    </div>
+<script type="text/javascript">
+    var IP = {!! json_encode($ip) !!}
 
-    <script type="text/javascript">
-        var IP = {!! json_encode($ip) !!}
-
-        $.ajax({
-            type: 'GET',
-            url: 'https://json.geoiplookup.io',
-            success: function (res) {
-                console.log(res.ip);
-                $("#ip").text(res.ip);
-                if (IP == res.ip) {
-                    $('#time').attr('disabled', false);
-                }
+    $.ajax({
+        type: 'GET',
+        url: 'https://json.geoiplookup.io',
+        success: function (res) {
+            console.log(res.ip);
+            $("#ip").text(res.ip);
+            if (IP == res.ip) {
+                $('#time').attr('disabled', false);
             }
-        })
-    </script>
+            else{
+                swal("โปรดบันทึกเวลาภายในพื้นที่บริษัท");
+            }
+        }
+    })
+</script>
 
 </body>
 @endsection

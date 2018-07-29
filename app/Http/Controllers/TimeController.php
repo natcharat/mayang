@@ -15,7 +15,7 @@ class TimeController extends Controller
         $this->middleware('user');
     }
     public function index(){
-        
+
         $time = Time::where('name', Auth::user()->name)
         ->where('date',date('d-m-Y'))->first();
         $ip = Ip::orderBy('updated_at', 'desc')->first();
@@ -33,7 +33,7 @@ class TimeController extends Controller
         $time = new Time;
         $time->name = Auth::user()->name;
         $time->time_in = date('h:i:sa');
-        $time->time_off = date('23:59:00');
+        $time->time_off = null;
         $time->date = date('d-m-Y');
         $time->status = 'in';
         $time->save();

@@ -15,7 +15,7 @@ class ReportController extends Controller
     }
 
     public function report(){
-        $data = Report::orderBy('updated_at','asc')->get();
+        $data = Report::orderBy('date','desc')->get();
         return view('report', compact('data'));
     }
 
