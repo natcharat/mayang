@@ -326,7 +326,7 @@ tr, td {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/changePassword">
+                                <a class="dropdown-item" href="/changePasswordUser">
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 

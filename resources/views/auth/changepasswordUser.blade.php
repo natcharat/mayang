@@ -64,18 +64,11 @@
 								<button type="submit" class="btn_crud btn_crud1">
 									เปลี่ยนรหัสผ่าน
 								</button>
-
-								<a method="GET" href="{{ URL::previous() }}">
-									<font class="btn_crud btn_crud3" style="color: white">
-										ยกเลิก
-									</font>
-								</a>
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

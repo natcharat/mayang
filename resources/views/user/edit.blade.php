@@ -58,7 +58,7 @@
 
                     <footer class="col-md-12 text-right">
                         <div class="form-group align-center">
-                            {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('ตกลง', ['class' => 'btn btn-primary']) !!}
                         </div>
                     </footer>
                     {!! Form::close() !!}

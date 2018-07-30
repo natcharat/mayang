@@ -52,11 +52,18 @@ li {
     text-decoration: none;
 }
 div.card {
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
 }
 tr:nth-child(even) {
-    background-color: #D8D9DD
+    background-color: #F4F4F6;
 }
 tr, td {
     vertical-align: center;
@@ -187,6 +194,18 @@ tr, td {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.show',$user->id) }}">
+                                    ดูข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('admin.edit', $user->id) }}">
+                                    แก้ไขข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     ออกจากระบบ
                                 </a>
