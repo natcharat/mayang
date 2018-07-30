@@ -18,9 +18,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Change Password
-Route::get('/changePassword','ChangePasswordController@showChangePasswordForm');
-Route::post('/changePassword','ChangePasswordController@changePassword')->name('changePassword');
+// Change Password User
+Route::get('/changePasswordUser','ChangePasswordController@showChangePasswordFormUser');
+Route::post('/changePasswordUser','ChangePasswordController@changePasswordUser')->name('changePassword');
+// Change Password Admin
+Route::get('/changePasswordAdmin','ChangePasswordController@showChangePasswordFormAdmin');
+Route::post('/changePasswordAdmin','ChangePasswordController@changePasswordAdmin')->name('changePassword');
 
 // Report
 Route::get('report', 'ReportController@report');
@@ -57,7 +60,6 @@ Route::get('/user/edit/{id}','UserController@edit')->name('user.edit');
 Route::get('/user/show/{id}','UserController@show')->name('user.show');
 Route::get('/user/delete/{id}','UserController@delete')->name('user.delete');
 Route::patch('user/update/{id}','UserController@update')->name('user.update');
-
 
 // send leave
 Route::get('add','LeaveController@create');
