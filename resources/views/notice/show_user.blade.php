@@ -9,7 +9,7 @@
         <h1>{{$notice->topic}}</h1>
         <hr>
         <footer class="col-md-12 text-right">
-            <font size="2">updated : {{ $notice->updated_at->diffForHumans() }}</font>
+            <font size="2">อัพเดทเมื่อ : {{$notice->updated_at}} ({{ $notice->updated_at->diffForHumans() }})</font>
         </footer><br>
 
         <font size="4"> {!! nl2br(e($notice->body)) !!} </font>
