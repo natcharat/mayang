@@ -22,7 +22,7 @@
 
 
       <div class="column left space-img">
-        <img class="img img-responsive" src="{{asset('img/user01.png')}}" width="90%" height="100%">
+        <img class="img img-responsive" src="{{asset('img/user02.png')}}" width="90%" height="100%">
       </div>
     
     <br>

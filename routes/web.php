@@ -63,7 +63,7 @@ Route::patch('user/update/{id}','UserController@update')->name('user.update');
 
 // send leave
 Route::get('add','LeaveController@create');
-Route::post('/user/create/store','LeaveController@store')->name('leave.store');
+Route::post('/leave/create/store','LeaveController@store')->name('leave.store');
 Route::post('add','LeaveController@store');
 Route::get('myRequest','LeaveController@crud')->name('request.crud')->middleware('user');
 Route::get('request/show/{id}','LeaveController@show')->name('leave.show')->middleware('user');
