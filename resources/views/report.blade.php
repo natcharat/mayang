@@ -222,8 +222,15 @@ tr, td {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                
-                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-wrench"></i>
+                                <a class="dropdown-item" href="{{ route('user.show',$user->id) }}"><i class="far fa-address-book"></i>
+                                    ดูข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('user.edit', $user->id) }}"><i class="fas fa-pen"></i>
+                                    แก้ไขข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-key"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 
