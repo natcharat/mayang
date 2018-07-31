@@ -10,8 +10,7 @@
     @endif
 
     <div class="container">
-        
-        <!-- Admin table -->
+
         <p class="table text-center">
             ตารางข้อมูล Admin
         </p>
@@ -55,10 +54,9 @@
         </table>
 
         <br><br>
-        
-        <!-- User table -->
+
         <p class="table text-center">
-            ตารางข้อมูล User
+            ตารางข้อมูล Admin
         </p>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
