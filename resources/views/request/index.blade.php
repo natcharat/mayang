@@ -3,10 +3,8 @@
 @section('content')
 
 
-<div class="container" style="border-style: solid;
-    background-color: orange;
-    border-radius: 30px; border-color: black">
-    <h1 align="center">คำขอลางาน</h1><br>
+<div class="divhead container">
+    <h2 align="center" class="divtext"><font color="white">คำขอลางาน</font></h2><br>
     
 </div>
 <hr>

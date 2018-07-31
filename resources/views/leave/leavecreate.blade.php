@@ -20,10 +20,11 @@
     </ul>
     @endif
 
-    <div class="column left">
-      <img class="img img-responsive" src="{{asset('img/user01.png')}}">
-    </div>
 
+      <div class="column left space-img">
+        <img class="img img-responsive" src="{{asset('img/user01.png')}}" width="90%" height="100%">
+      </div>
+    
     <br>
 
     <div class="column right">
@@ -44,7 +45,7 @@
               {!! Form::select('type' ,['ลาป่วย' => 'ลาป่วย', 'ลากิจ' => 'ลากิจ', 'ลาพักร้อน' => 'ลาพักร้อน'], null) !!}
             </div>
             <div class="col-md-6">
-              
+
             </div>
           </div>
         </div>

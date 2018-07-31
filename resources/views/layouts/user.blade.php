@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MA-YANG') }}</title>
+    <title>Ma-Yang</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -51,6 +51,10 @@
 .w3-button {
     width:150px;
     height:55px
+    
+}
+.space-img {
+    margin-left: ;
     
 }
 .form-style-2{
