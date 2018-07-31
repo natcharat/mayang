@@ -147,6 +147,10 @@ a.navlink:active, a.navlink:hover {
     color: #FCE1D3;
     text-decoration: none;
 }
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
@@ -235,7 +239,6 @@ div#mylayout_2{
     background-color: #F44336; /*red button*/
     padding: 5px 11px;
 }
-<<<<<<< HEAD
 div.clock {
     color: #3C4254;
     font-size: 80px;
@@ -244,42 +247,6 @@ div.clock {
 
 
 }
-=======
-
-@media screen and (max-width: 415px) {
-    table {
-        width: 315px;
-    }
-    thead.table, tbody.table, tr, td {
-        font-size: 4px;
-        box-sizing: border-box;
-    }
-    .btn_crud {
-        font-size: 4px;
-        padding: 2px 2px;
-    }
-    .btn_crud1 {
-        background-color: #0089E5; /*blue button*/
-        padding: 2px 5px;
-    }
-}
-@media screen and (min-width: 768px) {
-    .btn_crud2, .btn_crud3 {
-        padding: 2px 5px;
-    }
-    .btn_crud1{
-        padding: 2px 11px;
-    }
-}
-
-tr:nth-child(even) {
-    background-color: #D8D9DD
-}
-tr, td {
-    vertical-align: center;
-}
-
->>>>>>> master
 </style>
 
 <body>
@@ -331,7 +298,7 @@ tr, td {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/changePasswordUser">
+                                <a class="dropdown-item" href="/changePassword">
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 

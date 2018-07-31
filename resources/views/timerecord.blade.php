@@ -3,9 +3,9 @@
 @section('content')
 
 <body>
-	<br>
-	<div class="container">
-		<div class="row">
+    <br>
+    <div class="container">
+        <div class="row">
             <div id="MyClockDisplay" class="clock"></div>
             <script type="text/javascript">
 
