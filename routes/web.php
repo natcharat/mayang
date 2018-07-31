@@ -65,7 +65,7 @@ Route::patch('user/update/{id}','UserController@update')->name('user.update');
 
 // send leave
 Route::get('add','LeaveController@create');
-Route::post('/user/create/store','LeaveController@store')->name('leave.store');
+Route::post('/leave/create/store','LeaveController@store')->name('leave.store');
 Route::post('add','LeaveController@store');
 
 
