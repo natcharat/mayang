@@ -33,6 +33,15 @@ html, body {
 p.table {
     font-size: 28px;
 }
+p.request {
+    font-size: 18px;
+    color: #3C4254;
+    margin-bottom: 1px;
+    display: inline;
+}
+p.orange {
+    color: #EF6924;
+}
 a.navlink:visited {
     color: white;
     text-decoration: none;
@@ -43,6 +52,9 @@ a.navlink:active, a.navlink:hover {
 }
 a.crud:visited, a.crud:hover {
     color: white;
+    text-decoration: none;
+}
+a.request:visited, a.request:hover {
     text-decoration: none;
 }
 img {
