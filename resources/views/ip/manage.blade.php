@@ -44,7 +44,7 @@ sform {
             </div>
             <div class="col-md-4">
                 <br>
-                {!! Form::submit('บันทึก', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('บันทึก', ['class' => 'crud btn_crud btn_crud1']) !!}
                 {!! Form::close() !!}
             </div>
 

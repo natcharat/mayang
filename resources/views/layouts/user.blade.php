@@ -147,6 +147,10 @@ a.navlink:active, a.navlink:hover {
     color: #FCE1D3;
     text-decoration: none;
 }
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
