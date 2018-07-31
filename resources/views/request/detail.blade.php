@@ -46,8 +46,8 @@
 
     <!-- approve & disapprove -->
     <footer class="col-md-12 text-center">
-        <a class="btn btn-danger" href="{{ route('request.disapprove', $detail->id) }}" role="button">ไม่อนุมัติ</a>&nbsp&nbsp&nbsp
-        <a class="btn btn-success" href="{{ route('request.approve', $detail->id) }}" role="button">อนุมัติ</a>
+        <a class="crud btn_crud btn_crud3" href="{{ route('request.disapprove', $detail->id) }}" role="button">ไม่อนุมัติ</a>&nbsp&nbsp&nbsp
+        <a class="crud btn_crud btn_crud1" href="{{ route('request.approve', $detail->id) }}" role="button">อนุมัติ</a>
     </footer>
 </div>
 </body>

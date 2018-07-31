@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <body>
   <div class="container">
 
@@ -62,10 +63,12 @@
           </div>
         </div>
 
+
         <div class="form-group">
           <div class="row">
             <div class="col-md-6">
               {!! Form::label('start', 'เรื่มลาวันที่: ') !!}
+
               {!! Form::input('start', 'start',\Carbon\Carbon::now()->format('d-m-Y'),['class'=>'form-control']) !!}
 
             </div>

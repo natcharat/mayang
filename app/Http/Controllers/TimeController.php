@@ -29,6 +29,23 @@ class TimeController extends Controller
         
         return view('timerecord', compact('time', 'ip'));
     }
+
+    public function indextest(){
+        
+        $time = Time::where('name', Auth::user()->name)
+        ->where('date',date('d-m-Y'))->first();
+        $ip = Ip::orderBy('updated_at', 'desc')->first();
+
+        if ($ip == null) {
+            $ip = new Ip;
+            $ip->ip = 'none';
+        } else {
+            $ip = decrypt($ip->ip);
+        }
+        
+        return view('timerecord', compact('time', 'ip'));
+    }
+
     public function In(){ 
         $time = new Time;
         $time->name = Auth::user()->name;

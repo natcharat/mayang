@@ -46,7 +46,7 @@
 
       <div class="panel-footer" style="background-color: #8A8E98">
         <P Align=right>
-          <a href="{{ route('notice.show_user',$notice->id) }}" class="btn btn-md btn-success">อ่านเพิ่ม</a>   
+          <a href="{{ route('notice.show_user',$notice->id) }}" class="crud btn_crud btn_crud4">อ่านเพิ่ม</a>   
         </P>
       </div>
 

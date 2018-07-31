@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LeaveController extends Controller
 {
-
+	public function __construct()
+    {
+        $this->middleware('user');
+    }
 
 	public function index()
 	{
@@ -49,6 +52,24 @@ class LeaveController extends Controller
 		return redirect('Notice_show')->with('success', 'Car has been successfully added');
 	}
 
+	public function crud(){
+		$name = Auth::user()->name;
+    	$leaves = Leave::where('name',$name)->orderBy('created_at', 'desc')->get();
+        if(empty($leaves))
+            abort(404);
+        return view('request.crud',compact('leaves','name'));
+
+    }
+
+    public function show($id){
+    	$request = Leave::find($id);
+    	return view('request.show', compact('request'));
+    }
+
+
+
+
+
 	public function edit($id)
 	{
 		$leave = Car::find($id);
@@ -71,4 +92,5 @@ class LeaveController extends Controller
         $car->delete();
         return redirect('Leave')->with('success','Car has been  deleted');
     }
+
 }

@@ -44,7 +44,7 @@
             
             <footer class="col-md-12 text-right">
                 <a href="{{ route('user.crud') }}">
-                    <button class="btn_crud btn_crud4">
+                    <button class="btn_back btn_crud4">
                         กลับ
                     </button>
                 </a>

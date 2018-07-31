@@ -21,16 +21,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- thip code -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
 
+    <script src="{{ asset('js/jsdata.js') }}" defer></script>
     <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
     <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
     <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -54,6 +50,9 @@ html, body {
     background-color: white;
     color: #3C4254;
 }
+p.table {
+    font-size: 28px;
+}
 a.navlink:visited {
     color: white;
     text-decoration: none;
@@ -62,14 +61,108 @@ a.navlink:active, a.navlink:hover {
     color: #FCE1D3;
     text-decoration: none;
 }
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
+}
+img {
+    width: 382px;
+    height: 382px;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
 div.card {
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
+}
+tr:nth-child(even) {
+    background-color: #F4F4F6;
+}
+tr, td {
+    vertical-align: center;
+}
+@media screen and (max-width: 414px) {
+    nav, ul, li {
+        box-sizing: border-box;
+        max-width: 100%
+    }
+}
+.btn_crud {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_back {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_crud1 {
+    background-color: #0089E5; /*blue button*/
+    padding: 5px 15px;
+}
+.btn_crud2 {
+    background-color: #FECE00; /*yellow button*/
+    padding: 5px 10px;
+}
+.btn_crud3 {
+    background-color: #F44336; /*red button*/
+    padding: 5px 11px;
+}
+.btn_crud4 {
+    background-color: #EF6924; /*tecmove orange 100%*/
+    padding: 5px 11px; 
+}
+.btn_crud5 {
+    background-color: #4CAF50; /*green button*/
+    padding: 5px 11px; 
+}
+@media screen and (max-width: 415px) {
+    table {
+        width: 315px;
+    }
+    thead.table, tbody.table, tr, td {
+        font-size: 4px;
+        box-sizing: border-box;
+    }
+    .btn_crud {
+        font-size: 4px;
+        padding: 2px 2px;
+    }
+    .btn_crud1 {
+        background-color: #0089E5; /*blue button*/
+        padding: 2px 5px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .btn_crud2, .btn_crud3 {
+        padding: 2px 5px;
+    }
+    .btn_crud1{
+        padding: 2px 11px;
+    }
 }
 
 </style>
@@ -79,7 +172,7 @@ div.card {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" style="color: #EF6924">
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -92,23 +185,25 @@ div.card {
                         @auth
 
                         <li class="nav-item">
-                            <a class="navlink"  href="/request" style="color: white; position: relative;">คำขอ</a>
+                            <a class="navlink" href="/request">คำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/report" style="color: white; position: relative;">การเข้างาน</a>
+                            <a class="navlink" href="/report">การเข้างาน</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                            <a class="navlink" href="/user">ข้อมูลผู้ใช้</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/notice" style="color: white">ประกาศบริษัท</a>
+                            <a class="navlink" href="/notice">ประกาศบริษัท</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="navlink"  href="/ip/manage" style="color: white">จัดการ IP</a>
+                            <a class="navlink" href="/ip/manage">จัดการ IP</a>
                         </li>
 
                         @endauth
                         
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -125,11 +220,16 @@ div.card {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                
+                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                ออกจากระบบ
+                                </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -146,13 +246,16 @@ div.card {
 <br>
 <!-- Report -->
 <div class="container">
+
+    <h2>รายงานการเข้า-ออกงาน</h2>
+    <hr><br>
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Time in</th>
-                <th>Time off</th>
+                <th>ชื่อ</th>
+                <th>วันที่</th>
+                <th>เวลาเข้า</th>
+                <th>เวลาออก</th>
             </tr>
         </thead>
         <tbody>
