@@ -13,7 +13,7 @@
         
         <!-- Admin table -->
         <p class="table text-center">
-            Admin Table
+            ตารางข้อมูล Admin
         </p>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
@@ -58,7 +58,7 @@
         
         <!-- User table -->
         <p class="table text-center">
-            User Table
+            ตารางข้อมูล User
         </p>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
