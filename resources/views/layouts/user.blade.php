@@ -14,7 +14,9 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    
+    <!-- Sweet alert -->
+    <script src="{{ asset('js/sweetalert.min.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -28,12 +30,9 @@
     
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     
 
 
@@ -45,11 +44,7 @@
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-          $( "#datepicker" ).datepicker();
-      } );
-  </script>
+
 </head>
 
 <style>
@@ -152,14 +147,14 @@ a.navlink:active, a.navlink:hover {
     color: #FCE1D3;
     text-decoration: none;
 }
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
-}
-div.clock {
-    color: #3C4254;
-    font-size: 100px;
 }
 div.card {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
@@ -199,14 +194,14 @@ div#mylayout_2{
 
 }
 .p {
-   font-size:1.2em;
-   line-height:3em;
-   height:5em;
-   border:3px solid #8A8E98;
-   overflow: hidden;   
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+ font-size:1.2em;
+ line-height:3em;
+ height:5em;
+ border:3px solid #8A8E98;
+ overflow: hidden;   
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
 
 }
 .font{
@@ -259,6 +254,14 @@ a.crud:visited, a.crud:hover {
     background-color: #F44336; /*red button*/
     padding: 5px 11px;
 }
+div.clock {
+    color: #3C4254;
+    font-size: 80px;
+    margin: auto;
+    
+
+
+}
 </style>
 
 <body>
@@ -281,6 +284,9 @@ a.crud:visited, a.crud:hover {
                         </li>
                         <li class="nav-item">
                             <a class="navlink"  href="/add">ส่งคำขอ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navlink"  href="/myRequest">ประวัติการลา</a>
                         </li>
                         <li class="nav-item">
                             <a class="navlink"  href="/Notice_show">ประกาศบริษัท</a>

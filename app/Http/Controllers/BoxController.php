@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 
 class BoxController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index(){
         $requests = Box::where('status', 'Like', 'wait')->get();
         return view('request.index',compact('requests'));

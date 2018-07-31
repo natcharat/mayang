@@ -30,6 +30,9 @@ html, body {
     background-color: white;
     color: #3C4254;
 }
+p.table {
+    font-size: 18px;
+}
 a.navlink:visited {
     color: white;
     text-decoration: none;
@@ -52,11 +55,18 @@ li {
     text-decoration: none;
 }
 div.card {
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
 }
 tr:nth-child(even) {
-    background-color: #D8D9DD
+    background-color: #F4F4F6;
 }
 tr, td {
     vertical-align: center;
@@ -68,6 +78,17 @@ tr, td {
     }
 }
 .btn_crud {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_back {
     border: none;
     border-radius: 5px;
     color: white;
@@ -176,6 +197,11 @@ tr, td {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     ออกจากระบบ
                                 </a>

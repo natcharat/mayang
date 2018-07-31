@@ -21,16 +21,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- thip code -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
 
+    <script src="{{ asset('js/jsdata.js') }}" defer></script>
     <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
     <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
     <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -49,24 +45,23 @@
 </head>
 
 <style>
-html, body {
+html {
+    background-color: white;
+    color: #3C4254;
+}
+
+body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-a.navlink:visited {
-    color: white;
-    text-decoration: none;
-}
-a.navlink:active, a.navlink:hover {
-    color: #FCE1D3;
-    text-decoration: none;
-}
+
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
+
 div.card {
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
     padding: 5px;
@@ -79,7 +74,7 @@ div.card {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" style="color: #EF6924">
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -92,23 +87,24 @@ div.card {
                         @auth
 
                         <li class="nav-item">
-                            <a class="navlink"  href="/request" style="color: white; position: relative;">คำขอ</a>
+                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/report" style="color: white; position: relative;">การเข้างาน</a>
+                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/user" style="color: white">เพิ่มผู้ใช้</a>
+                            <a href="/user" style="color: white">ข้อมูลผู้ใช้</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/notice" style="color: white">ประกาศบริษัท</a>
+                            <a href="/notice" style="color: white">ประกาศบริษัท</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navlink"  href="/ip/manage" style="color: white">จัดการ IP</a>
+                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
                         </li>
 
                         @endauth
                         
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -128,7 +124,7 @@ div.card {
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                ออกจากระบบ
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -149,10 +145,10 @@ div.card {
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Time in</th>
-                <th>Time off</th>
+                <th>ชื่อ</th>
+                <th>วันที่</th>
+                <th>เวลาเข้า</th>
+                <th>เวลาออก</th>
             </tr>
         </thead>
         <tbody>

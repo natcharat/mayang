@@ -23,11 +23,7 @@
 
 <style>
 html, body {
-    background: url('img/morganblake7.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 100% 100%;
+    background-color: #3C4254;
 }
 
 button {
@@ -47,13 +43,14 @@ div.card {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     background-color: white;
     border-radius: 0px;
-    opacity: 1;
-    padding: 10px;
-    height: 80vh;
+}
+div.card-body {
+    height: 480px;
 }
 
 .mayang_brand {
     /*padding: 20px 50px 50px 50px;*/
+    font-family: 'Kanit', sans-serif;
     color: #EF6924;
     font-size: 110px;
 
@@ -97,14 +94,13 @@ div.card {
                     <div class="col-md-8 col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <br>
                                 <center>
                                     <font class="mayang_brand">
                                         Ma-Yang
                                     </font>
                                 </center>
 
-                                <br><br><br>
+                                <br><br>
 
                                 <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                                     @csrf
