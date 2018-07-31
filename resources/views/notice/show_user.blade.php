@@ -17,7 +17,7 @@
         <footer class="col-md-12 text-right">
             
 
-            <button class="btn btn-md btn-danger"onClick="history.back()">ย้อนกลับ</button>
+            <button class="crud btn_crud btn_crud3"onClick="history.back()">ย้อนกลับ</button>
         </footer>
 
     </div>
