@@ -217,8 +217,18 @@ div#mylayout_2{
 }
 .divhead{
     border-style: solid;
-    border-color: black;
-    border-radius: 30px;
+    border-color: ;
+    border-radius: 10px;
+    width: 30px,
+    height: 60px;
+    background-color: #3C4254;
+    margin-bottom: 15px;  
+
+
+}
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
 }
 .btn_crud {
     border: none;
@@ -227,10 +237,15 @@ div#mylayout_2{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     margin: 0px 1px; 
 }
+.btn_crud4 {
+    background-color: #EF6924; /*tecmove orange 100%*/
+    padding: 5px 11px; 
+}
+
 .btn_crud1 {
     background-color: #0089E5; /*blue button*/
     padding: 5px 15px;

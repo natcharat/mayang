@@ -11,7 +11,7 @@
 <body >
   <br><br>
   <div class="container font " >
-    <div class="jumbotron text-center divhead" style=" background-color:#EF6924">
+    <div class="text-center divhead">
       <h1 class="w3-xxlarge w3-text-white">        
         <b>ประกาศบริษัท TECMOVE</b>        
       </h1>      
