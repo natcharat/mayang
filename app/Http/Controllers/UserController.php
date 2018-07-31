@@ -16,9 +16,10 @@ class UserController extends Controller
     
     public function index(){
         $users = User::where('type',0)->get();
+        $admins = User::where('type',1)->get();
         if(empty($users))
             abort(404);
-        return view('user.crud',compact('users'));
+        return view('user.crud',compact('users', 'admins'));
     }
 
     public function create(){

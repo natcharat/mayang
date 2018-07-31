@@ -30,6 +30,9 @@ html, body {
     background-color: white;
     color: #3C4254;
 }
+p.table {
+    font-size: 18px;
+}
 a.navlink:visited {
     color: white;
     text-decoration: none;

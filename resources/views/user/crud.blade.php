@@ -10,7 +10,56 @@
     @endif
 
     <div class="container">
+        
+        <!-- Admin table -->
+        <p class="table text-center">
+            Admin Table
+        </p>
+        <table style="width: 100%">
+            <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
+                <tr>
+                    <!-- sum is must be 100% -->
+                    <td width="25%">ชื่อ</td>
+                    <td width="16%">ตำแหน่ง</td>
+                    <td width="24%">E-mail</td>
+                    <td width="15%">เบอร์โทรศัพท์</td>
+                    <td class="text-center" width="20%">
+                        <a href="{{ route('user.create') }}" class="crud btn_crud btn_crud5">
+                            <i class="fas fa-plus"></i>
+                            เพิ่มผู้ใช้
+                        </a>
+                    </td>
+                </tr>
+            </thead>
+            <tbody class="table">
+                @foreach($admins as $admin)
+                <tr>
+                    <td>{{ $admin->name }}</td>
+                    <td>{{ $admin->position }}</td>
+                    <td>{{ $admin->email }}</td>
+                    <td>{{ $admin->tell }}</td>
+                    <td class="text-center">
+                        <a href="{{ route('user.show',$admin->id) }}" class="crud btn_crud btn_crud1">
+                            <i class="fas fa-info"></i>
+                        </a>
+                        <a href="{{ route('user.edit', $admin->id) }}" class="crud btn_crud btn_crud2">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="{{ route('user.delete', $admin->id) }}" class="crud btn_crud btn_crud3">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
+        <br><br>
+        
+        <!-- User table -->
+        <p class="table text-center">
+            User Table
+        </p>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
                 <tr>
