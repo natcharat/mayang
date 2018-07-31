@@ -29,7 +29,8 @@ class LoginController extends Controller
             return '/request';
         } else if (Auth::user()->type == 0) {
             return '/timerecord';
-
+        } else if (Auth::user()->type == 2) {
+            return '/request';
         } else {
             return '/';
         }

@@ -47,6 +47,12 @@
                                 <a href="{{ route('user.show',$admin->id) }}" class="crud btn_crud btn_crud1">
                                     <i class="fas fa-info"></i>
                                 </a>
+                                <a href="{{ route('user.edit', $admin->id) }}" class="crud btn_crud btn_crud2">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a href="{{ route('user.delete', $admin->id) }}" class="crud btn_crud btn_crud3">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
