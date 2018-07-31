@@ -65,9 +65,15 @@ Route::patch('user/update/{id}','UserController@update')->name('user.update');
 
 // send leave
 Route::get('add','LeaveController@create');
+Route::post('/user/create/store','LeaveController@store')->name('leave.store');
 Route::post('add','LeaveController@store');
 
-Route::get('Notice_show','NoticeController@show_notice');
+
+//notice_show_user
+
+Route::get('/Notice_show','NoticeController@show_notice')->name('notice.show_notice');
+Route::get('/notices/show/{id}','NoticeController@show_user')->name('notice.show_user');
+
 
 //manage ip
 Route::get('/ip/manage','IpController@index')->name('ip.manage');
