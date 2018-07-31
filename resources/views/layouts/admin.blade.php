@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Ma-Yang') }}</title>
+    <title>Ma-Yang</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,6 +29,25 @@ html, body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
+}
+.space-img {
+    margin-right: 100px;
+    
+}
+.divhead{
+    border-style: solid;
+    border-color: ;
+    border-radius: 10px;
+    width: 30px,
+    height: 60px;
+    background-color: #3C4254;
+    
+
+}
+
+.divtext{
+    margin-top: 20px;margin-bottom: 1px;
+
 }
 a.navlink:visited {
     color: white;
