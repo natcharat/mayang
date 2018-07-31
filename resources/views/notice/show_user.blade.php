@@ -19,7 +19,7 @@
         <font size="4"> {!! nl2br(e($notice->body)) !!} </font>
         <br><br>
         <footer class="col-md-12 text-right">
-            <a href="{{ route('notice.show_notice') }}" class="crud btn_crud btn_crud4"> back </a>
+            <a href="{{ route('notice.show_notice') }}" class="crud btn_crud btn_crud4"> ย้อนกลับ </a>
         </footer>
 
     </div>
