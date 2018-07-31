@@ -31,7 +31,7 @@ html, body {
     color: #3C4254;
 }
 p.table {
-    font-size: 18px;
+    font-size: 28px;
 }
 a.navlink:visited {
     color: white;

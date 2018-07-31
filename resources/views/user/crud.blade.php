@@ -11,9 +11,10 @@
 
     <div class="container">
 
-        <p class="table text-center">
+        <p class="table">
             ตารางข้อมูล Admin
         </p>
+        <hr>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
                 <tr>
@@ -55,9 +56,10 @@
 
         <br><br>
 
-        <p class="table text-center">
+        <p class="table">
             ตารางข้อมูล Admin
         </p>
+        <hr>
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">
                 <tr>

@@ -45,26 +45,124 @@
 </head>
 
 <style>
-html {
-    background-color: white;
-    color: #3C4254;
-}
-
-body {
+html, body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
 }
-
+p.table {
+    font-size: 28px;
+}
+a.navlink:visited {
+    color: white;
+    text-decoration: none;
+}
+a.navlink:active, a.navlink:hover {
+    color: #FCE1D3;
+    text-decoration: none;
+}
+a.crud:visited, a.crud:hover {
+    color: white;
+    text-decoration: none;
+}
+img {
+    width: 382px;
+    height: 382px;
+}
 li {
     margin: 2px 6px;
     text-align: center;
     text-decoration: none;
 }
-
 div.card {
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 0px;
+    opacity: 1;
+}
+div.card-header {
+    background-color: #F28750;
+    color: white;
+    font-size: 18px
+}
+tr:nth-child(even) {
+    background-color: #F4F4F6;
+}
+tr, td {
+    vertical-align: center;
+}
+@media screen and (max-width: 414px) {
+    nav, ul, li {
+        box-sizing: border-box;
+        max-width: 100%
+    }
+}
+.btn_crud {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_back {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px 1px; 
+}
+.btn_crud1 {
+    background-color: #0089E5; /*blue button*/
+    padding: 5px 15px;
+}
+.btn_crud2 {
+    background-color: #FECE00; /*yellow button*/
+    padding: 5px 10px;
+}
+.btn_crud3 {
+    background-color: #F44336; /*red button*/
+    padding: 5px 11px;
+}
+.btn_crud4 {
+    background-color: #EF6924; /*tecmove orange 100%*/
+    padding: 5px 11px; 
+}
+.btn_crud5 {
+    background-color: #4CAF50; /*green button*/
+    padding: 5px 11px; 
+}
+@media screen and (max-width: 415px) {
+    table {
+        width: 315px;
+    }
+    thead.table, tbody.table, tr, td {
+        font-size: 4px;
+        box-sizing: border-box;
+    }
+    .btn_crud {
+        font-size: 4px;
+        padding: 2px 2px;
+    }
+    .btn_crud1 {
+        background-color: #0089E5; /*blue button*/
+        padding: 2px 5px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .btn_crud2, .btn_crud3 {
+        padding: 2px 5px;
+    }
+    .btn_crud1{
+        padding: 2px 11px;
+    }
 }
 
 </style>
@@ -87,19 +185,20 @@ div.card {
                         @auth
 
                         <li class="nav-item">
-                            <a href="/request" style="color: white; position: relative;">คำขอ</a>
+                            <a class="navlink" href="/request">คำขอ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/report" style="color: white; position: relative;">การเข้างาน</a>
+                            <a class="navlink" href="/report">การเข้างาน</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/user" style="color: white">ข้อมูลผู้ใช้</a>
+                            <a class="navlink" href="/user">ข้อมูลผู้ใช้</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/notice" style="color: white">ประกาศบริษัท</a>
+                            <a class="navlink" href="/notice">ประกาศบริษัท</a>
                         </li>
+
                         <li class="nav-item">
-                            <a href="/ip/manage" style="color: white">จัดการ IP</a>
+                            <a class="navlink" href="/ip/manage">จัดการ IP</a>
                         </li>
 
                         @endauth
@@ -121,11 +220,16 @@ div.card {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                
+                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                    เปลี่ยนรหัสผ่าน
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                 ออกจากระบบ
-                            </a>
+                                </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
