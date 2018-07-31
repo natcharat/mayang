@@ -271,6 +271,9 @@ div.clock {
                             <a class="navlink"  href="/add">ส่งคำขอ</a>
                         </li>
                         <li class="nav-item">
+                            <a class="navlink"  href="/myRequest">ประวัติการลา</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="navlink"  href="/Notice_show">ประกาศบริษัท</a>
                         </li>
                         @else
