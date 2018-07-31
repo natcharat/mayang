@@ -119,6 +119,19 @@ tr, td {
     background-color: #4CAF50; /*green button*/
     padding: 5px 11px; 
 }
+.divhead{
+    border-style: solid;
+    border-color: ;
+    border-radius: 10px;
+    width: 30px,
+    height: 60px;
+    background-color: #3C4254;
+    margin-bottom: 15px;  
+}
+.divtext {
+    margin-top: 20px;
+    margin-bottom: 1px;
+}
 @media screen and (max-width: 415px) {
     table {
         width: 315px;
@@ -197,11 +210,11 @@ tr, td {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-wrench"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
                                     ออกจากระบบ
                                 </a>
 

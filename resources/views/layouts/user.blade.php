@@ -339,11 +339,11 @@ div.clock {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/changePasswordUser">
+                                <a class="dropdown-item" href="/changePasswordUser"><i class="fas fa-wrench"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
                                     ออกจากระบบ
                                 </a>
 

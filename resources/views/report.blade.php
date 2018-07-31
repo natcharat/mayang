@@ -20,6 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
     <!-- thip code -->
 
     <script src="{{ asset('js/jsdata.js') }}" defer></script>
@@ -172,7 +174,7 @@ tr, td {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color: #EF6924">
+                <a class="navbar-brand" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -221,15 +223,15 @@ tr, td {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 
-                                <a class="dropdown-item" href="/changePasswordAdmin">
+                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-wrench"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
+                                document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i>
                                 ออกจากระบบ
-                                </a>
+                            </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
