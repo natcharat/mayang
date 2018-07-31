@@ -194,13 +194,6 @@ tr, td {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.show',$user->id) }}">
-                                    ดูข้อมูลส่วนตัว
-                                </a>
-
-                                <a class="dropdown-item" href="{{ route('admin.edit', $user->id) }}">
-                                    แก้ไขข้อมูลส่วนตัว
-                                </a>
 
                                 <a class="dropdown-item" href="/changePasswordAdmin">
                                     เปลี่ยนรหัสผ่าน
