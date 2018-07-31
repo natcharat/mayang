@@ -50,7 +50,7 @@ class TimeController extends Controller
         $time = new Time;
         $time->name = Auth::user()->name;
         $time->time_in = date('h:i:sa');
-        $time->time_off = date('23:59:00');
+        $time->time_off = date(null);
         $time->date = date('d-m-Y');
         $time->status = 'in';
         $time->save();
