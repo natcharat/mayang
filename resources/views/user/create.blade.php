@@ -35,7 +35,7 @@
             <hr>
 
             <div class="section-form">
-                {!! Form::open(['route' => 'user.store', 'method' => 'post', 'files' => true]) !!}
+                {!! Form::open(['url' => '/user/create/store', 'method' => 'post', 'files' => true]) !!}
                 <footer class="col-md-12" style="right: 15px">
 
                     <label class="radio-inline">
@@ -91,7 +91,7 @@
 
                 <footer class="col-md-12 text-right">
                     <div class="form-group align-center">
-                        {!! Form::submit('ตกลง', ['class' => 'btn_crud btn_crud1', 'style' => 'font-size: 16px']) !!}
+                        {!! Form::submit('ตกลง', ['class' => 'crud btn_crud btn_crud1', 'style' => 'font-size: 16px']) !!}
                         {!! Form::close() !!}
                     </div>
                 </footer>
