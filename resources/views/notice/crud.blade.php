@@ -10,6 +10,8 @@
     @endif
 
     <div class="container">
+        <h2>จัดการประกาศบริษัท</h2>
+        <hr>
 
         <table style="width: 100%">
             <thead class="table" style="background-color: #F28750; color: white; font-size: 16px">

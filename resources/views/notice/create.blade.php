@@ -44,7 +44,7 @@
 
             <footer class="col-md-12 text-right">
                 <div class="form-group align-center">
-                    {!! Form::submit('ตกลง', ['class' => 'btn_crud btn_crud1']) !!}
+                    {!! Form::submit('ตกลง', ['class' => 'btn_back btn_crud1']) !!}
                 </div>
             </footer>
             {!! Form::close() !!}

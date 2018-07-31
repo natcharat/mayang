@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class NoticeController extends Controller
 {
+
     public function index(){
         $notices = Notice::all();
         foreach ($notices as $key => $notice) {
@@ -66,77 +67,74 @@ class NoticeController extends Controller
     }
 
     public function delete($id){
-     $notice = Notice::where('id',$id)->first();
+        $notice = Notice::where('id',$id)->first();
 
-     if ($notice != null) {
-        $notice->delete();
-        return redirect()->route('notice.crud')->with(['msg'=> 'Successfully deleted!!']);
+        if ($notice != null) {
+            $notice->delete();
+            return redirect()->route('notice.crud')->with(['msg'=> 'Successfully deleted!!']);
+        }
+
+        return redirect()->route('notice.crud')->with(['msg'=> 'Wrong ID!!']); 
     }
 
-    return redirect()->route('notice.crud')->with(['msg'=> 'Wrong ID!!']); 
-}
+    public function update($id, Request $request){
 
-public function update($id, Request $request){
+        $this->validate($request, [
+            'topic' => 'required',
+            'body' => 'required',
+            'seen' => 'required',
+        ]);
 
-    $this->validate($request, [
-        'topic' => 'required',
-        'body' => 'required',
-        'seen' => 'required',
-    ]);
+        $notice = Notice::find($id);
+        $notice->topic = $request->topic;
+        $notice->body = $request->body;
 
-    $notice = Notice::find($id);
-    $notice->topic = $request->topic;
-    $notice->body = $request->body;
+        $notice->update();
 
-    $notice->update();
+        $keep_notice_list = Notice_list::where('notice_id',$id)->get()->each->delete();
 
-    $keep_notice_list = Notice_list::where('notice_id',$id)->get()->each->delete();
+        $notice_list = new Notice_list;
+        $notice_list->user_id = $request->seen;
+        $notice_list->notice_id = $id;
 
-    $notice_list = new Notice_list;
-    $notice_list->user_id = $request->seen;
-    $notice_list->notice_id = $id;
+        for($i = 0; $i < sizeof($notice_list->user_id,1); $i++){
+            $notice_keep = new Notice_list;
+            $notice_keep->user_id = $notice_list->user_id[$i];
+            $notice_keep->notice_id = $notice_list->notice_id;
+            $notice_keep->save();
+        }
 
-    for($i = 0; $i < sizeof($notice_list->user_id,1); $i++){
-        $notice_keep = new Notice_list;
-        $notice_keep->user_id = $notice_list->user_id[$i];
-        $notice_keep->notice_id = $notice_list->notice_id;
-        $notice_keep->save();
+        Session::flash('success_msg', 'Article updated successfully!');
+
+        return redirect()->route('notice.crud');
     }
-
-    Session::flash('success_msg', 'Article updated successfully!');
-
-    return redirect()->route('notice.crud');
-}
 
 // -------------all notice-------------
-public function show_notice(){
-    $id_user = Auth::user()->id;
-    $id_notices = Notice_list::select('notice_id')
-    ->where('user_id',$id_user)
-    ->get();
+    public function show_notice(){
+        $id_user = Auth::user()->id;
+        $id_notices = Notice_list::select('notice_id')
+        ->where('user_id',$id_user)
+        ->get();
 
-    if (count($id_notices) == 0) {
-        $keep_id = 'ยังไม่มีประกาศ';
-        $some_notice = '0';
-    } else {
-        foreach ($id_notices as $key => $id_notice) {
-            $keep_id[$key] = $id_notice->notice_id;
-        }
+        if (count($id_notices) == 0) {
+            $keep_id = 'ยังไม่มีประกาศ';
+            $some_notice = '0';
+        } else {
+            foreach ($id_notices as $key => $id_notice) {
+                $keep_id[$key] = $id_notice->notice_id;
+            }
 
-        foreach ($keep_id as $key => $keep_id) {
-            $some_notice[$key] = Notice::where('id',$keep_id)
-            ->first();
+            foreach ($keep_id as $key => $keep_id) {
+                $some_notice[$key] = Notice::where('id',$keep_id)
+                ->first();
+            }
         }
+        return view('notice.notice' , compact('some_notice'));
     }
 
-    
-    
-    
-    return view('notice.notice' , compact('some_notice'));
-}
-// -------------one notice-------------
-public function show_user($id){
-    $notice = Notice::find($id);
-    return view('notice.show_user', compact('notice'));
-}
+    // -------------one notice-------------
+    public function show_user($id){
+        $notice = Notice::find($id);
+        return view('notice.show_user', compact('notice'));
+    }
 }
