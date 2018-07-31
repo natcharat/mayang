@@ -12,6 +12,8 @@ sform {
 <body style="font-family: 'Kanit', sans-serif;">
 
     <div class="container">
+        <h2>จัดการ IP</h2>
+        <hr><br>
      @if($errors->any())
      <ul class="alert alert-danger">
         @foreach($errors->all() as $error)
@@ -26,7 +28,7 @@ sform {
     </ul>
     @endif
 
-    <br><br><br><br><br><br>
+    <br><br><br>
     <center>
         <font size="7" style="border: 4px">IP : {{$ip->ip}}</font>
     </center>

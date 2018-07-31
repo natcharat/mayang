@@ -142,6 +142,9 @@ div.card {
 <br>
 <!-- Report -->
 <div class="container">
+
+    <h2>รายงานการเข้า-ออกงาน</h2>
+    <hr><br>
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
