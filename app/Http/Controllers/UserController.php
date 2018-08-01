@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Session;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +22,12 @@ class UserController extends Controller
         $admins = User::where('type',1)->get();
         if(empty($admins))
             abort(404);
-        return view('user.crud',compact('users', 'admins'));
+
+        if (Auth::user()->type == 1) {
+            return view('user.crud',compact('users', 'admins'));
+        } else if (Auth::user()->type == 2) {
+            return view('user.superAdmin_crud',compact('users', 'admins'));
+        }
     }
 
     public function create(){

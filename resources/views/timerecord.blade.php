@@ -90,6 +90,7 @@
         </div>
         @endif
     </center>
+    <span id="ip"></span>
 </div>
 
 <script type="text/javascript">
