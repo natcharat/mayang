@@ -44,7 +44,7 @@ class UserController extends Controller
         $user->tell = $request->tell;
         $user->type = $request->type;
         $user->save();
-        return redirect()->route('user.crud');
+        return redirect()->route('user.crud')->with(['msg'=> 'เพิ่มผู้ใช้สำเร็จ']);
     }
 
     public function edit($id){
@@ -68,11 +68,9 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->tell = $request->tell;
 
-        Session::flash('success_msg', 'Article updated successfully!');
-
         $user->update();
 
-        return redirect()->route('user.crud');
+        return redirect()->route('user.crud')->with(['msg'=> 'แก้ไขข้อมูลสำเร็จ']);
     }
 
     public function delete($id){
@@ -83,7 +81,7 @@ class UserController extends Controller
         return redirect()->route('user.crud')->with(['msg'=> 'ลบผู้ใช้สำเร็จ']);
     }
 
-    return redirect()->route('user.crud')->with(['msg'=> 'Wrong ID!!']); 
+    return redirect()->route('user.crud')->with(['msg'=> 'ไม่สามารถลบได้']); 
     }
 
     public function show($id){

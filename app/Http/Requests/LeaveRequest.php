@@ -28,8 +28,8 @@ class LeaveRequest extends FormRequest
             'detail' => 'required|min:3|max:10000',
             'start' => 'required|date',
             'stop' => 'required|date',
-            'img'=>'mimes:png,jpeg,jpg,pdf,docx',
-            'file'=>'mimes:png,jpeg,jpg,pdf,docx',
+            'img'=>'mimes:png,jpeg,jpg',
+            'file'=>'mimes:pdf,docx',
         ];
     }
 

@@ -47,7 +47,7 @@ class NoticeController extends Controller
             $notice_keep->save();
         }
 
-        return redirect()->route('notice.crud');
+        return redirect()->route('notice.crud')->with(['msg'=> 'เพิ่มประกาศสำเร็จ']);;
     }
 
     public function edit($id){
@@ -72,10 +72,10 @@ class NoticeController extends Controller
 
         if ($notice != null) {
             $notice->delete();
-            return redirect()->route('notice.crud')->with(['msg'=> 'Successfully deleted!!']);
+            return redirect()->route('notice.crud')->with(['msg'=> 'ลบประกาศสำเร็จ']);
         }
 
-        return redirect()->route('notice.crud')->with(['msg'=> 'Wrong ID!!']); 
+        return redirect()->route('notice.crud')->with(['msg'=> 'ไม่สามารถลบได้']); 
     }
 
     public function update($id, Request $request){
@@ -105,9 +105,8 @@ class NoticeController extends Controller
             $notice_keep->save();
         }
 
-        Session::flash('success_msg', 'Article updated successfully!');
 
-        return redirect()->route('notice.crud');
+        return redirect()->route('notice.crud')->with(['msg'=> 'แก้ไขประกาศสำเร็จ']); 
     }
 
 // -------------all notice-------------

@@ -4,7 +4,7 @@
 
 <body>
     @if (session('msg'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" id="success-alert">
         {{ session('msg') }}
     </div>
     @endif
@@ -49,5 +49,12 @@
             </tbody>
         </table>
     </div>
+
+    <script type="text/javascript">
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#success-alert").slideUp(500);
+        });
+    </script>
+    
 </body>
 @endsection

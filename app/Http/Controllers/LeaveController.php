@@ -58,7 +58,7 @@ class LeaveController extends Controller
 		}
 
 		$leave->save();
-		return redirect('Notice_show')->with('success', 'Car has been successfully added');
+		return redirect('/myRequest');
 	}
 
 	public function crud(){
