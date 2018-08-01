@@ -448,15 +448,15 @@ table.dataTable thead .sorting_desc_disabled {
 }
 
 table.dataTable thead .sorting {
-    background-image: url("../images/sort_both.png")
+    background-image: url("../img/sort_both.png")
 }
 
 table.dataTable thead .sorting_asc {
-    background-image: url("../images/sort_asc.png")
+    background-image: url("../img/sort_asc.png")
 }
 
 table.dataTable thead .sorting_desc {
-    background-image: url("../images/sort_desc.png")
+    background-image: url("../img/sort_desc.png")
 }
 
 table.dataTable thead .sorting_asc_disabled {
@@ -512,7 +512,7 @@ table.dataTable.cell-border tbody tr:first-child td {
 
 table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
-    background-color: #f9f9f9
+
 }
 
 table.dataTable.stripe tbody tr.odd.selected,
@@ -522,7 +522,7 @@ table.dataTable.display tbody tr.odd.selected {
 
 table.dataTable.hover tbody tr:hover,
 table.dataTable.display tbody tr:hover {
-    background-color: #f6f6f6
+    
 }
 
 table.dataTable.hover tbody tr:hover.selected,
@@ -536,7 +536,6 @@ table.dataTable.order-column tbody tr>.sorting_3,
 table.dataTable.display tbody tr>.sorting_1,
 table.dataTable.display tbody tr>.sorting_2,
 table.dataTable.display tbody tr>.sorting_3 {
-    background-color: #fafafa
 }
 
 table.dataTable.order-column tbody tr.selected>.sorting_1,
@@ -550,12 +549,11 @@ table.dataTable.display tbody tr.selected>.sorting_3 {
 
 table.dataTable.display tbody tr.odd>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
-    background-color: #f1f1f1
 }
 
 table.dataTable.display tbody tr.odd>.sorting_2,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_2 {
-    background-color: #f3f3f3
+
 }
 
 table.dataTable.display tbody tr.odd>.sorting_3,
@@ -610,32 +608,31 @@ table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_3 {
 
 table.dataTable.display tbody tr:hover>.sorting_1,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
-    background-color: #eaeaea
+    
 }
 
 table.dataTable.display tbody tr:hover>.sorting_2,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_2 {
-    background-color: #ececec
 }
 
 table.dataTable.display tbody tr:hover>.sorting_3,
 table.dataTable.order-column.hover tbody tr:hover>.sorting_3 {
-    background-color: #efefef
+    
 }
 
 table.dataTable.display tbody tr:hover.selected>.sorting_1,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_1 {
-    background-color: #a2aec7
+    
 }
 
 table.dataTable.display tbody tr:hover.selected>.sorting_2,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_2 {
-    background-color: #a3b0c9
+    
 }
 
 table.dataTable.display tbody tr:hover.selected>.sorting_3,
 table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_3 {
-    background-color: #a5b2cb
+    
 }
 
 table.dataTable.no-footer {
