@@ -76,14 +76,18 @@
     <br><br>
     <center>
         @if ($time == null)
-        <a href="{{ url('time_in') }}">
-            <button class="timeBtn" id="time" disabled>เข้างาน</button>
-        </a>
+        <div class="in-btn">
+            <a href="{{ url('time_in') }}">
+                <button class="timeBtn" id="time" disabled>เข้างาน</button>
+            </a>
+        </div>
 
         @elseif ($time->status == 'in')
-        <a href="{{ url('time_off') }}">
-            <button class="timeBtn" id="time" disabled>ออกงาน</button>
-        </a>
+        <div class="in-btn">
+            <a href="{{ url('time_off') }}">
+                <button class="timeBtn" id="time" disabled>ออกงาน</button>
+            </a>
+        </div>
         @endif
     </center>
 </div>
@@ -101,6 +105,7 @@
                 $('#time').attr('disabled', false);
             }
             else{
+                $('.in-btn').html('<h2>ไม่สามารถลงเวลาได้เนื่องจากอยู่นอกพื้นที่บริษัท</h2>');
             }
         }
     })
