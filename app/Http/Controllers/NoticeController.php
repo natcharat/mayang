@@ -63,7 +63,8 @@ class NoticeController extends Controller
 
     public function show($id){
         $notice = Notice::find($id);
-        return view('notice.show', compact('notice'));
+        $date = date_format($notice->updated_at,"d/m/Y");
+        return view('notice.show', compact('notice','date'));
     }
 
     public function delete($id){

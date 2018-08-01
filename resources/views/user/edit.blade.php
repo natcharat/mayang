@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-md-6" style="">
                                 {!! Form::label('position', 'ตำแหน่ง') !!} <br>
-                                {!! Form::select('position' ,['พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
+                                {!! Form::select('position' ,['ผู้บริหาร' => 'ผู้บริหาร','Developer' => 'Developer','พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
                             </div>
                         </div>
                     </div>

@@ -42,6 +42,8 @@ class IpController extends Controller
             $ip->update();
         }
 
-        return redirect()->route('ip.manage');
+
+        return redirect()->route('ip.manage')->with(['msg'=> 'อัพเดตเลข IP สำเร็จ']);;
     }
+
 }

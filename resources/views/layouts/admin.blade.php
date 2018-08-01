@@ -119,6 +119,12 @@ tr, td {
     background-color: #4CAF50; /*green button*/
     padding: 5px 11px; 
 }
+.btn_crud6 {
+    background-color: #EF6924; /*green button*/
+    padding: 2px 14px;
+    margin-bottom: 1px;
+
+}
 .divhead{
     border-style: solid;
     border-color: ;
