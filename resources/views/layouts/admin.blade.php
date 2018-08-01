@@ -22,6 +22,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <script src="{{ asset('js/jsdata.js') }}" defer></script>
+    <script src="{{ asset('js/pdfmake.min.js') }}" defer></script>
+    <script src="{{ asset('js/vfs_fonts.js') }}" defer></script>
+    <script src="{{ asset('js/buttons.html5.min.js') }}" defer></script>
 </head>
 
 <style>
