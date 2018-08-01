@@ -55,10 +55,12 @@
     box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
 }
 .footernotice{
-    background-color: #6699CC;    
-    color: white;
+    background-color: #F5F5F5; 
+    font-size: 12px;   
+    color: black;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-top: 1px solid #cccccc;
     padding: 5px 10px;
 }
 
@@ -71,7 +73,7 @@
 }
 
 .headnotice{
-    background-color: #006699;
+    background-color: #d1732b;
     font-size: 20px;
     border-top-right-radius:5px; 
     border-top-left-radius:5px; 
@@ -253,10 +255,10 @@ div#mylayout_2{
 }
 .time{
     float: right;
-    color:white; 
+    color:black;
 }
 a.link  {
-    text-decoration:none;
+    text-decoration:underline;
 }
 
 .divcurcle {
