@@ -24,11 +24,11 @@ class LeaveRequest extends FormRequest
     public function rules()
     {
         return [
-            
+
             'detail' => 'required|min:3|max:10000',
             'start' => 'required|date',
             'stop' => 'required|date',
-            'image'=>'mimes:png,jpeg,jpg',
+            'img'=>'mimes:png,jpeg,jpg,pdf,docx',
         ];
     }
 
@@ -36,7 +36,7 @@ class LeaveRequest extends FormRequest
     {
         return [
             'detail.required' => 'กรุณาระบุรายละเอียด',
-            'image.required' => 'แนะนำไฟล์ png jpeg jpg',
+            'img.required' => 'แนะนำไฟล์ png jpeg jpg',
             'start.required' => 'กรุณาระบุวันที่เริ่มลา',
             'stop.required' => 'กรุณาระบุวันที่สิ้นสุดการลา',
         ];

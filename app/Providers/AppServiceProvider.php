@@ -17,11 +17,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        view()->composer('layouts.admin', function($view) {
+        view()->composer('layouts.admin', function ($view) {
             $view->with('user', Auth::user());
         });
-
-        view()->composer('report', function($view) {
+        view()->composer('report', function ($view) {
             $view->with('user', Auth::user());
         });
     }

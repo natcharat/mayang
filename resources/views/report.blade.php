@@ -268,6 +268,7 @@ tr, td {
                 <th>วันที่</th>
                 <th>เวลาเข้า</th>
                 <th>เวลาออก</th>
+                <th>สถานะ</th>
             </tr>
         </thead>
         <tbody>
@@ -277,6 +278,7 @@ tr, td {
                 <td>{{ $d->date }}</td>
                 <td>{{ $d->time_in }}</td>
                 <td>{{ $d->time_off }}</td>
+                <td>มา</td>
             </tr>
             @endforeach
 

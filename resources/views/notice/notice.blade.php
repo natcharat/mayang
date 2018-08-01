@@ -9,52 +9,40 @@
 
 
 <body >
-  <br><br>
+  
   <div class="container font " >
     <div class="text-center divhead">
       <h1 class="w3-xxlarge w3-text-white">        
-        <b>ประกาศบริษัท TECMOVE</b>        
+        ประกาศบริษัท TECMOVE       
       </h1>      
     </div>
     @if($some_notice == 0)
 
-      <div class="jumbotron text-center " style=" background-color:#">
+    <div class="jumbotron text-center " style=" background-color:#">
       <h1 class="w3-xxlarge w3-text-white">        
         <font color="black"><b>ยังไม่มีประกาศ</b></font>        
       </h1>      
     </div>
 
     @else
+    
     @foreach($some_notice as $notice)
-
-    <div class="pane font" >
-      <div class="panel-heading" style="background-color: #3C4254">       
-        <FONT SIZE="3" Color="white">
-          <P Align=right>{{$notice->updated_at}}&nbsp</P>         
-        </FONT>
-        <FONT SIZE="5.5" Color="white">                 
-          <B>&nbsp {{$notice->topic}}</B>
-        </FONT>
-
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading font_topic">{{$notice->topic}}</div>
+      <div class="panel-body p" id="mylayout_2">{{$notice->body}}</div>
+      <div class="panel-footer">
+        
+        ประกาศเมื่อวันที่ {{ $notice->updated_at->format('d/m/Y') }}
+        
+        <a href="{{ route('notice.show_user',$notice->id) }}" class="link time">อ่านเพิ่มเติม
+        </a>        
       </div>
+    </div>
 
-      <div class="panel-body p" id="mylayout_2">
-        <font color="">        
-          {{$notice->body}}        
-        </font>
-      </div>
-
-      <div class="panel-footer" style="background-color: #8A8E98">
-        <P Align=right>
-          <a href="{{ route('notice.show_user',$notice->id) }}" class="crud btn_crud btn_crud4">อ่านเพิ่ม</a>   
-        </P>
-      </div>
-
-    </div><br>
+    <br>
     @endforeach
     @endif
-
-
 
   </div>
 

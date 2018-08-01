@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Ma-Yang') }}</title>
+    <title>Ma-Yang</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -133,6 +133,12 @@ tr, td {
 .btn_crud5 {
     background-color: #4CAF50; /*green button*/
     padding: 5px 11px; 
+}
+.btn_crud6 {
+    background-color: #EF6924; /*green button*/
+    padding: 2px 14px;
+    margin-bottom: 1px;
+
 }
 .divhead{
     border-style: solid;

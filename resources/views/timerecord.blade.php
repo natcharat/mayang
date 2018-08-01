@@ -14,7 +14,7 @@
                 var h = date.getHours(); // 0 - 23
                 var m = date.getMinutes(); // 0 - 59
                 var s = date.getSeconds(); // 0 - 59
-                var session = "";
+                var session = "AM";
 
                 if(h == 0){
                     h = 12;
@@ -22,7 +22,7 @@
 
                 if(h > 12){
                     h = h - 12;
-                    session = "";
+                    session = "PM";
                 }
 
                 h = (h < 10) ? "0" + h : h;
@@ -36,10 +36,8 @@
                 setTimeout(showTime, 1000);
             }
 
-            showTime();
-
+            showTime();    
         </script>
-
     </div>
     <center><br><br>
         <div class="container">
@@ -78,14 +76,18 @@
     <br><br>
     <center>
         @if ($time == null)
-        <a href="{{ url('time_in') }}">
-            <button class="timeBtn" id="time" disabled>เข้างาน</button>
-        </a>
+        <div class="in-btn">
+            <a href="{{ url('time_in') }}">
+                <button class="timeBtn" id="time" disabled>เข้างาน</button>
+            </a>
+        </div>
 
         @elseif ($time->status == 'in')
-        <a href="{{ url('time_off') }}">
-            <button class="timeBtn" id="time" disabled>ออกงาน</button>
-        </a>
+        <div class="in-btn">
+            <a href="{{ url('time_off') }}">
+                <button class="timeBtn" id="time" disabled>ออกงาน</button>
+            </a>
+        </div>
         @endif
     </center>
     <span id="ip"></span>
@@ -104,7 +106,7 @@
                 $('#time').attr('disabled', false);
             }
             else{
-                swal("โปรดบันทึกเวลาภายในพื้นที่บริษัท");
+                $('.in-btn').html('<h2>ไม่สามารถลงเวลาได้เนื่องจากอยู่นอกพื้นที่บริษัท</h2>');
             }
         }
     })
