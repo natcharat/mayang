@@ -30,8 +30,20 @@ html, body {
     background-color: white;
     color: #3C4254;
 }
+i.fa-bars {
+    color: white;
+}
 p.table {
     font-size: 28px;
+}
+p.request {
+    font-size: 18px;
+    color: #3C4254;
+    margin-bottom: 1px;
+    display: inline;
+}
+p.orange {
+    color: #EF6924;
 }
 a.navlink:visited {
     color: white;
@@ -43,6 +55,9 @@ a.navlink:active, a.navlink:hover {
 }
 a.crud:visited, a.crud:hover {
     color: white;
+    text-decoration: none;
+}
+a.request:visited, a.request:hover {
     text-decoration: none;
 }
 img {
@@ -167,7 +182,7 @@ tr, td {
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
