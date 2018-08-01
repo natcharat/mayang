@@ -58,7 +58,7 @@ class LeaveController extends Controller
 		}
 
 		$leave->save();
-		return redirect('/myRequest');
+		return redirect('/myRequest')->with(['msg'=> 'ส่งคำขอลาสำเร็จ']);
 	}
 
 	public function crud(){

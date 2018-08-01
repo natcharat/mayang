@@ -37,7 +37,8 @@ class LeaveRequest extends FormRequest
     {
         return [
             'detail.required' => 'กรุณาระบุรายละเอียด',
-            'img.required' => 'แนะนำไฟล์ png jpeg jpg',
+            'img.mimes' => 'แนะนำไฟล์ png jpeg jpg',
+            'file.mimes' => 'แนะนำไฟล์ docx pdf',
             'start.required' => 'กรุณาระบุวันที่เริ่มลา',
             'stop.required' => 'กรุณาระบุวันที่สิ้นสุดการลา',
         ];
