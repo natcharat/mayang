@@ -43,12 +43,21 @@
                     สาเหตุ : {{ $request->detail }}
                 </div>
             </div>
+            <div class="row">
+                @if($request->file)
+                <div class="col-md-12">
+                    ไฟล์เอกสาร(.docx/.pdf) : 
+                    <a href="{{asset($request->file)}}" download>Download</a>
+
+                </div>
+                @endif 
+            </div>
         </font>
         <br><br>
 
         <div class="col-md-12">
-           @if($request->img)
-           <center>
+         @if($request->img)
+         <center>
             <img src="{{ url($request->img)}}"  class="img-responsive" style="width:60%;height:60%">
         </center><br><br>
         @endif
