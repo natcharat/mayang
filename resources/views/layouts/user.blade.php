@@ -44,21 +44,10 @@
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <!-- ----------------------- -->    
-    
-    
-    <!-- --------------------------------- -->
-
-    
-    
-
 </head>
 
 <style>
 .kk{
-
-
     border-radius:10px;
     box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
 }
@@ -85,6 +74,10 @@
     border-top-left-radius:5px; 
     color: white;
     padding: 5px 10px;
+
+i.fa-bars {
+    color: white;
+
 }
 .w3-button {
     width:150px;
@@ -236,13 +229,13 @@ div#mylayout_2{
 
 }
 .p {
- font-size:1.2em;
- line-height:3em;
- height:5em; 
- overflow: hidden;   
- white-space: nowrap;
- overflow: hidden;
- text-overflow: ellipsis;
+   font-size:1.2em;
+   line-height:3em;
+   height:5em; 
+   overflow: hidden;   
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 
 }
 .font{
@@ -329,6 +322,12 @@ div.clock {
         background-color: #0089E5; /*blue button*/
         padding: 2px 5px;
     }
+    div.clock {
+        color: #3C4254;
+        font-size: 55px;
+        margin: auto;
+    }
+
 }
 @media screen and (min-width: 768px) {
     .btn_crud2, .btn_crud3 {
@@ -344,11 +343,11 @@ div.clock {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" style="color: #EF6924">
+                <a href="/timerecord" class="navbar-brand" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -19,13 +19,10 @@ class IsAdmin
 
         if (Auth::check() && Auth::user()->type == 1){
             return $next($request);
+        } elseif (Auth::check() && Auth::user()->type == 2) {
+            return $next($request);
         }
-        //  else if (Auth::check() && Auth::user()->type == 0){
-        //     return $next($request);
-        // }
-        
 
         return redirect()->back();
-        // return view('permission');
     }
 }
