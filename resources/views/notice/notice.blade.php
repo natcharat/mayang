@@ -32,7 +32,9 @@
       <div class="panel-heading font_topic">{{$notice->topic}}</div>
       <div class="panel-body p" id="mylayout_2">{{$notice->body}}</div>
       <div class="panel-footer">
-        {{$notice->updated_at}}
+        
+        ประกาศเมื่อวันที่ {{ $notice->updated_at->format('d/m/Y') }}
+        
         <a href="{{ route('notice.show_user',$notice->id) }}" class="link time">อ่านเพิ่มเติม
         </a>        
       </div>
