@@ -45,6 +45,12 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- ----------------------- -->    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    
+
 </head>
 
 <style>
@@ -200,8 +206,7 @@ div#mylayout_2{
 .p {
  font-size:1.2em;
  line-height:3em;
- height:5em;
- border:3px solid #8A8E98;
+ height:5em; 
  overflow: hidden;   
  white-space: nowrap;
  overflow: hidden;
@@ -211,7 +216,19 @@ div#mylayout_2{
 .font{
   font-family: 'Kanit', sans-serif;
   color:  ;
+
 }
+.font_topic{
+    font-size:20px;
+    float: ;
+}
+.time{
+    float: right;
+}
+a.link  {
+text-decoration:none;
+}
+
 .divcurcle {
   border-radius: 25px;
   border: 2px solid #8A8E98;
@@ -222,7 +239,7 @@ div#mylayout_2{
 .divhead{
     border-style: solid;
     border-color: ;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 30px,
     height: 60px;
     background-color: #3C4254;

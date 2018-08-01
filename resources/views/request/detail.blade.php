@@ -32,14 +32,22 @@
                     สาเหตุ : {{ $detail->detail }}
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    ไฟล์ประกอบ : 
+                    <a href="{{asset($detail->file)}}" download>Download</a>
+
+                </div>
+            </div>
         </font>
         <br><br>
 
         <div class="col-md-12">
-           @if($detail->img)
-           <center>
-            <img src="{{ url($detail->img)}}"  class="img-responsive" style="width:60%;height:60%">
+         @if($detail->img)
+         <center>
+            <img src="{{ asset($detail->img)}}"  class="img-responsive" style="width:60%;height:60%">
         </center><br><br>
+                  
         @endif
     </div>
     <br>

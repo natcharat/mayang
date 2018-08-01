@@ -47,7 +47,16 @@ class LeaveController extends Controller
 			$destination = base_path() . "/public/" . $public_path;
 			$request->file('img')->move($destination, $image_name);
 			$leave->img = $public_path . $image_name;
-		}       
+		}
+		if ($request->hasFile('file')){
+			$image_filename = $request->file('file')->getClientOriginalName();
+			$image_name = date("Ymd-His-") . $image_filename;
+			$public_path = 'file/leave/';
+			$destination = base_path() . "/public/" . $public_path;
+			$request->file('file')->move($destination, $image_name);
+			$leave->file = $public_path . $image_name;
+		}
+
 		$leave->save();
 		return redirect('Notice_show')->with('success', 'Car has been successfully added');
 	}

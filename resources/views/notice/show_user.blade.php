@@ -3,7 +3,7 @@
 @section('content')
 
 <body>
-    <br><br>
+    
     <div class="container font">
 
         <h1>{{$notice->topic}}</h1>

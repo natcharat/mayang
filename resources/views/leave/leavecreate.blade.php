@@ -21,9 +21,9 @@
     @endif
 
 
-      <div class="column left space-img">
-        <img class="img img-responsive" src="{{asset('img/user02.png')}}" width="90%" height="100%">
-      </div>
+    <div class="column left space-img">
+      <img class="img img-responsive" src="{{asset('img/user02.png')}}" width="90%" height="100%">
+    </div>
     
     <br>
 
@@ -54,11 +54,11 @@
           <div class="row">
             <div class="col-md-6">
               {!! Form::label('name', 'ชื่อผู้ใช้') !!}
-              {!! Form::text('name', $name, ['class' => 'form-control']) !!}
+              {!! Form::text('name', $name, ['class' => 'form-control','readonly' => 'true']) !!}
             </div>
             <div class="col-md-6">
               {!! Form::label('position', 'ตำแหน่ง') !!}
-              {!! Form::text('position', $position, ['class' => 'form-control']) !!}
+              {!! Form::text('position', $position, ['class' => 'form-control','readonly' => 'true']) !!}
             </div>
           </div>
         </div>
@@ -81,14 +81,23 @@
         </div>
 
         <div class="form-group">
-          <div class="row">
+          <div class="row">            
+            <div class="col-md-6">
+              <label for="img">แนบไฟล์รูปภาพ(jpg.png):</label>
+              <input type="file" name="img" >
+            </div>
+            <div class="col-md-6">
+              <label for="file">แนบไฟล์เอกสาร(Docx,pdf):</label>
+              <input type="file" name="file" >
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="row"> 
             <div class="col-md-6">
               {!! Form::label('detail', 'รายละเอียด') !!}
               {!! Form::textarea('detail','', ['class' => 'form-control', 'rows' => 2, 'cols' => 40]) !!}      
-            </div>
-            <div class="col-md-6">
-              <label for="img">แนบไฟล์รูปภาพ:</label>
-              <input type="file" name="img" >
             </div>
           </div>
         </div>
