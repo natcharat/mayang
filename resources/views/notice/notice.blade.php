@@ -2,49 +2,51 @@
 
 @section('content')
 
-<head>
+<body>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                
+            </div>
+        </div>
+    </div>
 
-</head>
-
-
-<body >
-  
   <div class="container font " >
     <div class="text-center divhead">
       <h1 class="w3-xxlarge w3-text-white">        
         ประกาศบริษัท TECMOVE       
-      </h1>      
-    </div>
-    @if($some_notice == 0)
+    </h1>      
+</div>
+@if($some_notice == 0)
 
-    <div class="jumbotron text-center " style=" background-color:#">
-      <h1 class="w3-xxlarge w3-text-white">        
-        <font color="black"><b>ยังไม่มีประกาศ</b></font>        
-      </h1>      
-    </div>
+<div class="jumbotron text-center " style=" background-color:#">
+  <h1 class="w3-xxlarge w3-text-white">        
+    <font color="black"><b>ยังไม่มีประกาศ</b></font>        
+</h1>      
+</div>
 
-    @else
-    
-    @foreach($some_notice as $notice)
-    
-    <div class="panel panel-primary">
-      <div class="panel-heading font_topic">{{$notice->topic}}</div>
-      <div class="panel-body p" id="mylayout_2">{{$notice->body}}</div>
-      <div class="panel-footer">
-        
-        ประกาศเมื่อวันที่ {{ $notice->updated_at->format('d/m/Y') }}
-        
-        <a href="{{ route('notice.show_user',$notice->id) }}" class="link time">อ่านเพิ่มเติม
-        </a>        
-      </div>
-    </div>
+@else
 
-    <br>
-    @endforeach
-    @endif
+@foreach($some_notice as $notice)
 
-  </div>
+<div class="panel panel-primary">
+  <div class="panel-heading font_topic">{{$notice->topic}}</div>
+  <div class="panel-body p" id="mylayout_2">{{$notice->body}}</div>
+  <div class="panel-footer">
+
+    ประกาศเมื่อวันที่ {{ $notice->updated_at->format('d/m/Y') }}
+
+    <a href="{{ route('notice.show_user',$notice->id) }}" class="link time">อ่านเพิ่มเติม
+    </a>        
+</div>
+</div>
+
+<br>
+@endforeach
+@endif
+
+</div>
 
 </body>
 @endsection

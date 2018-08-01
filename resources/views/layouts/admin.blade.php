@@ -36,6 +36,15 @@ i.fa-bars {
 p.table {
     font-size: 28px;
 }
+p.request {
+    font-size: 18px;
+    color: #3C4254;
+    margin-bottom: 1px;
+    display: inline;
+}
+p.orange {
+    color: #EF6924;
+}
 a.navlink:visited {
     color: white;
     text-decoration: none;
@@ -46,6 +55,9 @@ a.navlink:active, a.navlink:hover {
 }
 a.crud:visited, a.crud:hover {
     color: white;
+    text-decoration: none;
+}
+a.request:visited, a.request:hover {
     text-decoration: none;
 }
 img {
@@ -141,6 +153,19 @@ tr, td {
     margin-top: 20px;
     margin-bottom: 1px;
 }
+.font-ip1 {
+    font-size: 25px;
+    display: inline;
+}
+.font-ip2 {
+    font-size: 30px;
+    display: inline;
+}
+.font-ip3 {
+    font-size: 45px;
+    display: inline;
+    color: #EF6924;
+}
 @media screen and (max-width: 415px) {
     table {
         width: 315px;
@@ -157,6 +182,19 @@ tr, td {
         background-color: #0089E5; /*blue button*/
         padding: 2px 5px;
     }
+    .font-ip1 {
+        font-size: 18px;
+        display: inline;
+    }
+    .font-ip2 {
+        font-size: 23px;
+        display: inline;
+    }
+    .font-ip3 {
+        font-size: 38px;
+        display: inline;
+        color: #EF6924;
+    }
 }
 @media screen and (min-width: 768px) {
     .btn_crud2, .btn_crud3 {
@@ -165,6 +203,19 @@ tr, td {
     .btn_crud1{
         padding: 2px 11px;
     }
+    .font-ip1 {
+        font-size: 18px;
+        display: inline;
+    }
+    .font-ip2 {
+        font-size: 23px;
+        display: inline;
+    }
+    .font-ip3 {
+        font-size: 38px;
+        display: inline;
+        color: #EF6924;
+    }
 }
 </style>
 
@@ -172,7 +223,7 @@ tr, td {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-expand-sm navbar-light navbar-laravel" style="background-color: #3C4254">
             <div class="container">
-                <a class="navbar-brand" style="color: #EF6924">
+                <a href="/request" class="navbar-brand" style="color: #EF6924">
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

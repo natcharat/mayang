@@ -10,10 +10,10 @@
     @endif
 
     <div class="container">
-     <h2>จัดการ IP</h2>
-     <hr><br>
-     @if($errors->any())
-     <ul class="alert alert-danger">
+       <h2>จัดการ IP</h2>
+       <hr><br>
+       @if($errors->any())
+       <ul class="alert alert-danger">
         @foreach($errors->all() as $error)
         <center>
             <font size="3">
@@ -33,11 +33,24 @@
             <div id="rcorners1">
                 <br>
                 <input type="hidden" name="ip" value="" id = "input-ip">
-                <font size="6px">IP ที่ใช้ตรวจการลงเวลา :</font><br>
-                <font size="8px">{{$ip->ip}}</font><br><br><br>
-                <i class="fa fa-info-circle" style="font-size:23px;color:#8e8f99"></i>
-                <font size="4" style="color:#535782">IP อินเทอร์เน็ตที่ใช้อยู่ขณะนี้ :</font>
-                <font size="5" id = "ip" style="color:#535782"></font>
+                <p class="font-ip2">
+                    IP ที่ใช้ตรวจการลงเวลา :
+                </p>
+
+                <br>
+                <p class="font-ip3">
+                    {{$ip->ip}}
+                </p>
+
+                <br><br><br>
+
+                <i class="font-ip1 fa fa-info-circle"></i>
+                <p class="font-ip1">
+                    IP อินเทอร์เน็ตที่ใช้อยู่ขณะนี้ :
+                </p>
+                <p class="font-ip1" id="ip">
+
+                </p>
                 <div class="col-md-12 text-right">
                     <br>
                     {!! Form::submit('นำไปใช้', ['class' => 'crud btn_crud btn_crud1']) !!}
