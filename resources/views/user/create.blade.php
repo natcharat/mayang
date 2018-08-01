@@ -53,7 +53,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             {!! Form::label('username', 'ชื่อผู้ใช้') !!}
-                            {!! Form::text('username', null, ['class' => 'form-control', 'placeholder'=>'example_tecmove']) !!}
+                            {!! Form::text('username', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="col-md-6">
                             {!! Form::label('password', 'รหัสผ่าน') !!}
@@ -68,10 +68,10 @@
                             {!! Form::label('name', 'ชื่อ-นามสกุล') !!}
                             {!! Form::text('name', null, ['class' => 'form-control']) !!}
                         </div>
-            
+
                         <div class="col-md-6" style="">
                             {!! Form::label('position', 'ตำแหน่ง') !!} <br>
-                            {!! Form::select('position' ,['พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
+                            {!! Form::select('position' ,['ผู้บริหาร' => 'ผู้บริหาร','Developer' => 'Developer','พนักงานฝึกงาน' => 'พนักงานฝึกงาน', 'ครีเอทีฟ' => 'ครีเอทีฟ'], null, ['placeholder' => 'ตำแหน่ง...']) !!}
                         </div>
                     </div>
                 </div>
@@ -84,13 +84,16 @@
                         </div>
                         <div class="col-md-6">
                             {!! Form::label('email', 'E-Mail') !!}
-                            {!! Form::text('email', null, ['class' => 'form-control', 'placeholder'=>'example@gmail.com']) !!}
+                            {!! Form::text('email', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
                 </div>
 
                 <footer class="col-md-12 text-right">
                     <div class="form-group align-center">
+                        <a href="{{ route('user.crud') }}" class="crud btn_crud btn_crud6">
+                            กลับ
+                        </a>
                         {!! Form::submit('ตกลง', ['class' => 'crud btn_crud btn_crud1', 'style' => 'font-size: 16px']) !!}
                         {!! Form::close() !!}
                     </div>

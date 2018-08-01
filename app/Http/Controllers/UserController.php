@@ -74,7 +74,7 @@ class UserController extends Controller
 
        if($user != null) {
         $user->delete();
-        return redirect()->route('user.crud')->with(['msg'=> 'Successfully deleted!!']);
+        return redirect()->route('user.crud')->with(['msg'=> 'ลบผู้ใช้สำเร็จ']);
     }
 
     return redirect()->route('user.crud')->with(['msg'=> 'Wrong ID!!']); 

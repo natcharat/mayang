@@ -76,6 +76,8 @@ Route::get('/notices/show/{id}','NoticeController@show_user')->name('notice.show
 //manage ip
 Route::get('/ip/manage','IpController@index')->name('ip.manage');
 Route::post('/ip/manage/store','IpController@store')->name('ip.store');
+Route::post('/ip/manage/set','IpController@set')->name('ip.set');
+
 
 
 
