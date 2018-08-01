@@ -11,6 +11,6 @@ class Leave extends Eloquent
 	protected $collection = 'leave';
 
 	protected $fillable = [
-		'name', 'position','start', 'stop', 'detail', 'img', 'type', 'status'
+		'name', 'position','start', 'stop', 'detail', 'img', 'file', 'type', 'status'
 	];
 }

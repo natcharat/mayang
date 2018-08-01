@@ -127,6 +127,7 @@ class NoticeController extends Controller
             foreach ($keep_id as $key => $keep_id) {
                 $some_notice[$key] = Notice::where('id',$keep_id)
                 ->first();
+                
             }
         }
         return view('notice.notice' , compact('some_notice'));
@@ -135,6 +136,7 @@ class NoticeController extends Controller
     // -------------one notice-------------
     public function show_user($id){
         $notice = Notice::find($id);
-        return view('notice.show_user', compact('notice'));
+        $date = date_format($notice->updated_at,"d/m/Y");
+        return view('notice.show_user', compact('notice','date'));
     }
 }
