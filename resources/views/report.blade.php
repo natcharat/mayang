@@ -52,6 +52,9 @@ html, body {
     background-color: white;
     color: #3C4254;
 }
+i.fa-bars {
+    color: white;
+}
 p.table {
     font-size: 28px;
 }
@@ -178,7 +181,7 @@ tr, td {
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -222,8 +225,15 @@ tr, td {
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                
-                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-wrench"></i>
+                                <a class="dropdown-item" href="{{ route('user.show',$user->id) }}"><i class="far fa-address-book"></i>
+                                    ดูข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('user.edit', $user->id) }}"><i class="fas fa-pen"></i>
+                                    แก้ไขข้อมูลส่วนตัว
+                                </a>
+
+                                <a class="dropdown-item" href="/changePasswordAdmin"><i class="fas fa-key"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 

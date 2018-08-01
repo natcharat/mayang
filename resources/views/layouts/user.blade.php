@@ -48,6 +48,9 @@
 </head>
 
 <style>
+i.fa-bars {
+    color: white;
+}
 .w3-button {
     width:150px;
     height:55px
@@ -298,7 +301,7 @@ div.clock {
                     Ma-Yang
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -339,7 +342,7 @@ div.clock {
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="/changePasswordUser"><i class="fas fa-wrench"></i>
+                                <a class="dropdown-item" href="/changePasswordUser"><i class="fas fa-key"></i>
                                     เปลี่ยนรหัสผ่าน
                                 </a>
 

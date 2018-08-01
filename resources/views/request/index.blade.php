@@ -2,32 +2,55 @@
 
 @section('content')
 
-
-<div class="divhead container">
-    <h2 align="center" class="divtext"><font color="white">คำขอลางาน</font></h2><br>
-    
-</div>
-<hr>
-@foreach($requests as $r)
 <div class="container">
+    <h2>
+        คำขอลางาน
+    </h2>
+
+    <hr>
+
+    @foreach($requests as $r)
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card" style="background-color: white">
-                <a href="{{ route('request.detail', $r->id) }}">
+                <a class="request" href="{{ route('request.detail', $r->id) }}">
                     <div class="card-body">
-                       <font size="5.5" color="orange">✪</font> 
-                        <font color="orange" size="4">
-                             ชื่อ: {{ $r->name }}&nbsp&nbsp
-                            ตำแหน่ง: {{ $r->position }}&nbsp&nbsp&nbsp
-                            ประเภท: {{ $r->type }}
-                        </font>
+                        <div class="row">
+                            <div class="col-md">
+                                
+                                <p class="request">
+                                    ชื่อ: 
+                                </p>
+                                <p class="request orange">
+                                    {{ $r->name }}
+                                </p>
+                            </div>
+                            <div class="col-md">
+                                <p class="request">
+                                    ตำแหน่ง: 
+                                </p>
+                                <p class="request">
+                                    {{ $r->position }}
+                                </p>
+                            </div>
+                            <div class="col-md">
+                                <p class="request">
+                                    ประเภท: 
+                                </p>
+                                <p class="request">
+                                    {{ $r->type }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
+
     <br>
+
+    @endforeach
 </div>
-@endforeach
 
 @endsection
