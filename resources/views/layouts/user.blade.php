@@ -47,13 +47,45 @@
 
     <!-- ----------------------- -->    
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- --------------------------------- -->
+
     
     
 
 </head>
 
 <style>
+.kk{
+
+
+    border-radius:10px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+}
+.footernotice{
+    background-color: #6699CC;    
+    color: white;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5px 10px;
+}
+
+.bodynotice{
+    background-color:#F5F5F5;
+    padding: 5px;
+    border-color:#6699CC;
+    padding-left: 10px;
+    border-style: ;  
+}
+
+.headnotice{
+    background-color: #006699;
+    font-size: 20px;
+    border-top-right-radius:5px; 
+    border-top-left-radius:5px; 
+    color: white;
+    padding: 5px 10px;
+}
 .w3-button {
     width:150px;
     height:55px
@@ -224,9 +256,10 @@ div#mylayout_2{
 }
 .time{
     float: right;
+    color:white; 
 }
 a.link  {
-text-decoration:none;
+    text-decoration:none;
 }
 
 .divcurcle {

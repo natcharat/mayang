@@ -29,6 +29,7 @@ class LeaveRequest extends FormRequest
             'start' => 'required|date',
             'stop' => 'required|date',
             'img'=>'mimes:png,jpeg,jpg,pdf,docx',
+            'file'=>'mimes:png,jpeg,jpg,pdf,docx',
         ];
     }
 
