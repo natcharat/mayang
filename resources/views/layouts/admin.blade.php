@@ -29,6 +29,7 @@ html, body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
+    overflow-x: hidden;
 }
 i.fa-bars {
     color: white;

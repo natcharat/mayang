@@ -44,6 +44,9 @@
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- ----------------------- -->    
+
 </head>
 
 <style>
@@ -74,7 +77,7 @@
     border-top-left-radius:5px; 
     color: white;
     padding: 5px 10px;
-
+}
 i.fa-bars {
     color: white;
 
@@ -173,6 +176,7 @@ html, body {
     font-family: 'Kanit', sans-serif;
     background-color: white;
     color: #3C4254;
+    overflow-x: hidden;
 }
 a.navlink:visited {
     color: white;
