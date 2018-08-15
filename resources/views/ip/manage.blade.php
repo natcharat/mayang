@@ -53,7 +53,10 @@
                 </p>
                 <div class="col-md-12 text-right">
                     <br>
-                    {!! Form::submit('นำไปใช้', ['class' => 'crud btn_crud btn_crud1']) !!}
+                    <center>
+                        {!! Form::submit('นำไปใช้', ['class' => 'crud btn_crud btn_crud1']) !!}
+                    </center>
+                    
                 </div>
             </div>
             {!! Form::close() !!}
